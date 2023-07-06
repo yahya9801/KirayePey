@@ -70,7 +70,7 @@ return [
     'looking_for_product_or_service' => 'Looking for a product or service',
     'post_your_free_listings_here' => 'Post your free listings here',
     'make_your_deal_now' => 'Make your deal Now!',
-    'classified_ads' => 'Classified ads',
+    'classified_ads' => 'Rental ads',
     'listings_in' => 'Classified ads in',
     'listings_in_location' => 'Classified ads in :location',
     'listings_in_category' => 'Classified ads in :category',
@@ -473,7 +473,7 @@ return [
     'Finish' => 'Finish',
     
     'Trusted Seller' => 'Trusted Seller',
-    'Trusted Sellers' => 'Trusted Sellers',
+    'Trusted Sellers' => 'Lenders',
     'Facebook Fans' => 'Facebook Fans',
     
     
