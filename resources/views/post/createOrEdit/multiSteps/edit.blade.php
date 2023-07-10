@@ -167,7 +167,7 @@
 													</span>
 													<span class="input-group-text">
 														<input id="securityDeposit" name="securityDeposit" type="checkbox"
-															   value="1" @checked(old('securityDeposit', data_get($postInput, 'securityDeposit')) == '1')>&nbsp;
+															   value="1" @checked(old('securityDeposit', data_get($post, 'securityDeposit')) == '1')>&nbsp;
 														<small>Security Deposit</small>
 													</span>
 												</div>
