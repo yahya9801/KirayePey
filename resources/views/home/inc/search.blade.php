@@ -3,7 +3,7 @@
 	$sectionData ??= [];
 	
 	// Get Search Form Options
-	$enableFormAreaCustomization = data_get($sectionOptions, 'enable_extended_form_area') ?? '0';
+	$enableFormAreaCustomization = '0';
 	$hideTitles = data_get($sectionOptions, 'hide_titles') ?? '0';
 	
 	$headerTitle = data_get($sectionOptions, 'title_' . config('app.locale'));
