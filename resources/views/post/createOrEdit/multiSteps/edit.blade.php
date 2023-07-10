@@ -165,6 +165,11 @@
 															   value="1" {{ (old('negotiable', data_get($post, 'negotiable'))=='1') ? 'checked="checked"' : '' }}>
 														&nbsp;<small>{{ t('negotiable') }}</small>
 													</span>
+													<span class="input-group-text">
+														<input id="securityDeposit" name="securityDeposit" type="checkbox"
+															   value="1" @checked(old('securityDeposit', data_get($postInput, 'securityDeposit')) == '1')>&nbsp;
+														<small>Security Deposit</small>
+													</span>
 												</div>
 												<div class="form-text text-muted">{{ t('price_hint') }}</div>
 											</div>

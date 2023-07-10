@@ -63,6 +63,9 @@
 									@if (data_get($post, 'negotiable') == 1)
 										<small class="label bg-success"> {{ t('negotiable') }}</small>
 									@endif
+									@if (data_get($post, 'securityDeposit') == 1)
+										<small class="label bg-success"> Security Deposit</small>
+									@endif
 								</span>
 							</h4>
 						</div>

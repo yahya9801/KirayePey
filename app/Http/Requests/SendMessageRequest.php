@@ -71,7 +71,7 @@ class SendMessageRequest extends Request
 			'email'         => ['max:100'],
 			'phone'         => ['max:30'],
 			'phone_country' => ['required_with:phone'],
-			'body'          => ['required', new BetweenRule(20, 500)],
+			'body'          => ['required', new BetweenRule(5, 500)],
 			'post_id'       => ['required', 'numeric'],
 		];
 		
