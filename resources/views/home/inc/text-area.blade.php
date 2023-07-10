@@ -2,8 +2,6 @@
 $sectionOptions = $getTextAreaOp ?? [];
 $sectionData ??= [];
 
-\Log::info($sectionOptions);
-
 // Fallback Language
 $textTitle = data_get($sectionOptions, 'title_' . config('appLang.abbr'));
 $textTitle = replaceGlobalPatterns($textTitle);

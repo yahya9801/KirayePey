@@ -165,13 +165,36 @@
 															   value="1" {{ (old('negotiable', data_get($post, 'negotiable'))=='1') ? 'checked="checked"' : '' }}>
 														&nbsp;<small>{{ t('negotiable') }}</small>
 													</span>
+												</div>
+												<div class="form-text text-muted">{{ t('price_hint') }}</div>
+											</div>
+										</div>
+										@php
+											$priceError2 = (isset($errors) && $errors->has('securityDepositAmount')) ? ' is-invalid' : '';
+											$price2 = old('price', data_get($post, 'securityDepositAmount'));
+											$price2 = \App\Helpers\Number::format($price2, 2, '.', '');
+										@endphp
+										<div id="priceBloc" class="row mb-3">
+											<label class="col-md-3 col-form-label{{ $priceError2 }}" for="price">Security Deposit</label>
+											<div class="col-md-8">
+												<div class="input-group">
+													<span class="input-group-text">{!! config('currency')['symbol'] !!}</span>
+													<input id="price"
+														   name="securityDepositAmount"
+														   class="form-control{{ $priceError2 }}"
+														   placeholder="{{ t('ei_price') }}"
+														   type="number"
+														   min="0"
+														   step="{{ getInputNumberStep((int)config('currency.decimal_places', 2)) }}"
+														   value="{!! $price2 !!}"
+													>
 													<span class="input-group-text">
 														<input id="securityDeposit" name="securityDeposit" type="checkbox"
 															   value="1" @checked(old('securityDeposit', data_get($post, 'securityDeposit')) == '1')>&nbsp;
-														<small>Security Deposit</small>
+														<small>Is Required</small>
 													</span>
 												</div>
-												<div class="form-text text-muted">{{ t('price_hint') }}</div>
+												<div class="form-text text-muted">{{ t('securityDeposit_hint') }}</div>
 											</div>
 										</div>
 										

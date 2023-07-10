@@ -84,6 +84,26 @@
 								{!! data_get($post, 'price_formatted') !!}
 							</h2>
 						</div>
+						@if (data_get($post, 'securityDepositAmount') > 0)
+							<div class="col-12 m-0 p-0 d-flex justify-content-end">
+								<h2 class="item-price">
+									@if (data_get($post, 'securityDeposit') == 1)
+											<small class="label bg-success" style="font-size: 12px;"> Security Deposit Required</small>
+										@else
+											<small class="label bg-primary" style="font-size: 12px;">Security Deposit Optional</small>
+										
+
+									@endif
+								</h2>
+							</div>
+						@else
+						<div class="col-12 m-0 p-0 d-flex justify-content-end">
+							<h2 class="item-price">
+								<small class="label bg-danger" style="font-size: 12px;">Security Deposit Not Required</small>
+							</h2>
+						</div>
+											
+						@endif
 						<div class="col-12 m-0 p-0 d-flex justify-content-end">
 							@if (!empty(data_get($post, 'latestPayment.package')))
 								@if (data_get($post, 'latestPayment.package.has_badge') == 1)

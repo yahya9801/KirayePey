@@ -56,6 +56,8 @@ trait LatestOrPremium
 			'post_type_id',
 			'title',
 			$postsTable . '.price',
+			$postsTable . '.securityDeposit',
+			$postsTable . '.securityDepositAmount',
 			'city_id',
 			'featured',
 			$postsTable . '.created_at',

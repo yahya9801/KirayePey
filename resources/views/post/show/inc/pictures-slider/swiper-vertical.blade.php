@@ -6,6 +6,7 @@
 				@if (!empty($price))
 					<div class="p-price-tag">{!! $price !!}</div>
 				@endif
+				
 				<div class="swiper-slide">
 					{!! imgTag(data_get($image, 'filename'), 'big', ['alt' => $titleSlug . '-big-' . $key]) !!}
 				</div>

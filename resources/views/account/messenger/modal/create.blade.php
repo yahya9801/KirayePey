@@ -19,7 +19,7 @@ $post ??= [];
 			<form role="form" method="POST" action="{{ url('account/messages/posts/' . data_get($post, 'id')) }}" enctype="multipart/form-data">
 				{!! csrf_field() !!}
 				<div class="modal-body">
-
+`
 					@if (isset($errors) && $errors->any() && old('messageForm')=='1')
 						<div class="alert alert-danger alert-dismissible">
 							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{{ t('Close') }}"></button>

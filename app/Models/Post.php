@@ -69,6 +69,7 @@ class Post extends BaseModel implements Feedable
 		'picture_url_big',
 		'price_label',
 		'price_formatted',
+		'security_deposit_formatted',
 	];
 	
 	/**
@@ -101,6 +102,7 @@ class Post extends BaseModel implements Feedable
 		'price',
 		'negotiable',
 		'securityDeposit',
+		'securityDepositAmount',
 		'contact_name',
 		'auth_field',
 		'email',
@@ -907,7 +909,36 @@ class Post extends BaseModel implements Feedable
 						default => $defaultValue,
 					},
 				};
+				return (string)$result;
+			},
+		);
+	}
+
+	protected function securityDepositFormatted(): Attribute
+	{
+		return Attribute::make(
+			get: function ($value) {
+				$defaultValue = Number::money(0);
 				
+				if (!$this->relationLoaded('category')) {
+					return $defaultValue;
+				}
+				
+				$categoryType = $this->category?->type;
+				$price = $this?->securityDepositAmount;
+				
+				$isNotSalable = ($categoryType == 'not-salable');
+				$isNotFree = (is_numeric($price) && $price > 0);
+				$isFree = (is_numeric($price) && $price == 0);
+				
+				$result = match (true) {
+					$isNotSalable => null,
+					default => match (true) {
+						$isNotFree => Number::money($price),
+						$isFree => t('free_as_price'),
+						default => $defaultValue,
+					},
+				};
 				return (string)$result;
 			},
 		);

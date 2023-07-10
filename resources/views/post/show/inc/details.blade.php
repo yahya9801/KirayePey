@@ -60,15 +60,43 @@
 								</span>
 								<span>
 									{!! data_get($post, 'price_formatted') !!}
+									
 									@if (data_get($post, 'negotiable') == 1)
 										<small class="label bg-success"> {{ t('negotiable') }}</small>
-									@endif
-									@if (data_get($post, 'securityDeposit') == 1)
-										<small class="label bg-success"> Security Deposit</small>
 									@endif
 								</span>
 							</h4>
 						</div>
+						@if (data_get($post, 'securityDepositAmount') > 0)
+						
+							<div class="col-md-12 col-sm-12 col-12 text-end" style="padding-top: 8px;">
+								<h4 class="fw-normal p-0">
+									<span class="fw-bold">
+										
+										Security Deposit
+									</span>
+									<span>
+										{!! data_get($post, 'security_deposit_formatted') !!}
+										@if (data_get($post, 'securityDeposit') == 1)
+											<small class="label bg-success"> Required</small>
+										@else
+										<small class="label bg-primary">Optional</small>
+										@endif
+									</span>
+								</h4>
+							</div>
+						@else
+							<div class="col-md-12 col-sm-12 col-12 text-end" style="padding-top: 8px;">
+								<h4 class="fw-normal p-0">
+									<span class="fw-bold">
+										Security Deposit
+									</span>
+									<span>
+										<small class="label bg-danger"> Not Required</small>
+									</span>
+								</h4>
+							</div>
+						@endif
 					</div>
 					<hr class="border-0 bg-secondary">
 					

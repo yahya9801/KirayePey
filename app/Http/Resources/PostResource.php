@@ -63,6 +63,7 @@ class PostResource extends JsonResource
 		$entity['country_flag_url'] = $this->country_flag_url ?? null;
 		$entity['price_label'] = $this->price_label ?? t('price');
 		$entity['price_formatted'] = $this->price_formatted ?? null;
+		$entity['security_deposit_formatted'] = $this->security_deposit_formatted ?? null;
 		$entity['count_pictures'] = $this->count_pictures ?? 0;
 		
 		$defaultPicture = config('larapen.core.picture.default');

@@ -927,6 +927,7 @@ return [
 	'Load old messages' => 'Load old messages',
 	'free_as_price' => 'Free',
 	'price_hint' => 'Enter 0 to offer this item (or service) as a donation.',
+    'securityDeposit_hint' => 'Enter 0 to offer this item as a donation.',
 	'error_found' => 'Error found',
 	'Remove this filter' => 'Remove this filter',
 	'This listing has been archived' => 'This listing has been archived.',
