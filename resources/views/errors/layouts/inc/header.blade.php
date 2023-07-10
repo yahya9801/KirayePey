@@ -150,9 +150,9 @@ if (request()->segment(1) != 'countries') {
 						@endif
 					</li>
 					
-					@if (!empty(config('lang.abbr')))
+					{{-- @if (!empty(config('lang.abbr')))
 						@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.menu.select-language', 'layouts.inc.menu.select-language'])
-					@endif
+					@endif --}}
 				</ul>
 			</div>
 		</div>
