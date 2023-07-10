@@ -94,11 +94,11 @@ if ($multiCountriesIsEnabled) {
 					@endif
 				</ul>
 
-				<div class="navbar-collapse collapse" id="navbarsDefault">
+				{{-- <div class="navbar-collapse collapse" id="navbarsDefault">
 					<ul class="nav navbar-nav me-md-auto navbar-left">
 						@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.search', 'home.inc.search'])
 					</ul>
-				</div>
+				</div> --}}
 				
 				<ul class="nav navbar-nav ms-auto navbar-right">
 					@if (config('settings.list.display_browse_listings_link'))
