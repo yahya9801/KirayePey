@@ -217,7 +217,7 @@ if ($multiCountriesIsEnabled) {
 						</a>
 					</li>
 					
-					@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.menu.select-language', 'layouts.inc.menu.select-language'])
+					{{-- @includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.menu.select-language', 'layouts.inc.menu.select-language']) --}}
 				
 				</ul>
 			</div>
