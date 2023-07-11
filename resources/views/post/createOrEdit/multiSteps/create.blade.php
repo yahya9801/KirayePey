@@ -163,12 +163,12 @@
 											$price2 = \App\Helpers\Number::format($price2, 2, '.', '');
 										@endphp
 										<div id="priceBloc" class="row mb-3">
-											<label class="col-md-3 col-form-label{{ $priceError2 }}" for="price">Security Deposit</label>
+											<label class="col-md-3 col-form-label{{ $priceError2 }}" for="securityDepositAmount">Security Deposit</label>
 											<div class="col-md-8">
 												<div class="input-group">
 													<span class="input-group-text">{!! config('currency')['symbol'] !!}</span>
 													<input id="price"
-														   name="price"
+														   name="securityDepositAmount"
 														   class="form-control{{ $priceError2 }}"
 														   placeholder="{{ t('ei_price') }}"
 														   type="number"
