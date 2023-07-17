@@ -58,6 +58,7 @@
 										
 										<span class="price">
 											{!! data_get($post, 'price_formatted') !!}
+											{!! data_get($post, 'pricing') !!}
 										</span>
 									</a>
 								</div>

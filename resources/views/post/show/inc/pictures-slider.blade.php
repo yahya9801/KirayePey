@@ -2,7 +2,7 @@
 	$post ??= [];
 	$titleSlug = str(data_get($post, 'title'))->slug();
 	
-	$price = data_get($post, 'price_formatted');
+	$price = data_get($post, 'price_formatted'). data_get($post, 'pricing');
 	
 	$picturesSliderPath = 'post.show.inc.pictures-slider.';
 	$defaultPicturesSlider = 'swiper-horizontal';

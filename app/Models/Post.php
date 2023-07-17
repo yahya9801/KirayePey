@@ -100,6 +100,7 @@ class Post extends BaseModel implements Feedable
 		'description',
 		'tags',
 		'price',
+		'pricing',
 		'negotiable',
 		'securityDeposit',
 		'securityDepositAmount',

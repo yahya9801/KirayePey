@@ -157,6 +157,18 @@
 												<div class="form-text text-muted">{{ t('price_hint') }}</div>
 											</div>
 										</div>
+
+										<div id="locationBox" class="row mb-3 required">
+											<label class="col-md-3 col-form-label" for="pricing">Select Pricing Rate <sup>*</sup></label>
+											<div class="col-md-8">
+												<select id="pricing" name="pricing" class="form-control large-data-selecter">
+													<option selected value="">Choose your Rate</option>
+													<option value="/hr">Per hour(/hr) </option>
+													<option value="/day">Per day(/day) </option>
+													<option value="/month">Per month(/month) </option>
+												</select>
+											</div>
+										</div>
 										@php
 											$priceError2 = (isset($errors) && $errors->has('securityDepositAmount')) ? ' is-invalid' : '';
 											$price2 = old('price', data_get($postInput, 'securityDepositAmount'));
