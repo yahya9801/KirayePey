@@ -174,10 +174,9 @@
 											<label class="col-md-3 col-form-label" for="pricing">Select Pricing Rate <sup>*</sup></label>
 											<div class="col-md-8">
 												<select id="pricing" name="pricing" class="form-control large-data-selecter">
-													<option selected value="">Choose your Rate</option>
-													<option value="/hr">Per hour(/hr) </option>
-													<option value="/day">Per day(/day) </option>
-													<option value="/month">Per month(/month) </option>
+													<option @selected(old('pricing', data_get($post, 'pricing')) == '/hr') value="/hr">Per hour(/hr) </option>
+													<option @selected(old('pricing', data_get($post, 'pricing')) == '/day') value="/day">Per day(/day) </option>
+													<option @selected(old('pricing', data_get($post, 'pricing')) == '/month') value="/month">Per month(/month) </option>
 												</select>
 											</div>
 										</div>
