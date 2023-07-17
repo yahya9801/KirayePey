@@ -741,7 +741,7 @@ return [
 	'processing' => 'Processing',
 	'processing_wd' => 'Processing...',
 	'Your picture has been reorder successfully' => 'Your picture has been reorder successfully',
-	'Create Listing' => 'Rent',
+	'Create Listing' => 'Rent karo',
 	'Choose a city or region' => 'Choose a city or region',
 	'Choose a state or region' => 'Choose a state or region',
 	'Received at' => 'Received at',
