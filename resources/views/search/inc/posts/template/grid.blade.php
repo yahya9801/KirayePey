@@ -82,6 +82,7 @@
 						<div class="col-12 m-0 p-0 d-flex justify-content-end">
 							<h2 class="item-price">
 								{!! data_get($post, 'price_formatted') !!}
+								{!! data_get($post, 'pricing') !!}
 							</h2>
 						</div>
 						@if (data_get($post, 'securityDepositAmount') > 0)

@@ -167,6 +167,7 @@
 													<div>
 														<strong>
 															{!! data_get($post, 'price_formatted') !!}
+															{!! data_get($post, 'pricing') !!}
 														</strong>
 													</div>
 												</td>
