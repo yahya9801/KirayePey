@@ -4,7 +4,12 @@
 	$cat ??= null;
 	
 	$cats ??= [];
-	
+	if(count($cats) == 0) {
+		$cacheId = 'cat.0.categories.' . config('app.locale');
+		$cats = cache()->remember($cacheId, $this->cacheExpiration, function () {
+			return Category::root()->orderBy('lft')->get();
+		});
+	}
 	// Keywords
 	$keywords = request()->get('q');
 	$keywords = (is_string($keywords)) ? $keywords : null;
