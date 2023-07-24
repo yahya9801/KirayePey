@@ -2,6 +2,7 @@
 	$admin ??= null;
 	$city ??= null;
 	$cat ??= null;
+	use App\Models\Category;
 	
 	$cats ??= [];
 	if(count($cats) == 0) {
