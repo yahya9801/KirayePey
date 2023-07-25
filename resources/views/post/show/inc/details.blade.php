@@ -92,7 +92,11 @@
 										Security Deposit
 									</span>
 									<span>
-										<small class="label bg-danger"> Not Required</small>
+										@if (data_get($post, 'securityDeposit') == 1)
+											<small class="label bg-primary"> Optional</small>
+										@else
+										<small class="label bg-danger">Not Required</small>
+										@endif
 									</span>
 								</h4>
 							</div>

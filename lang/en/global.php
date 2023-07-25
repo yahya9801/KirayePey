@@ -197,7 +197,7 @@ return [
     'a_great_title_needs_at_least_60_characters' => 'A great title needs at least 60 characters.',
     'describe_listing' => 'Describe listing',
     'describe_what_makes_your_listing_unique' => 'Describe what makes your listing unique',
-    'price' => 'Price',
+    'price' => 'Rent Fee',
     'ei_price' => 'eg 15000',
     'negotiable' => 'Negotiable',
     'pictures' => 'Pictures',
