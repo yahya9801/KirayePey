@@ -106,13 +106,11 @@ trait SidebarTrait
 			$cities = cache()->remember($cacheId, $this->cacheExpiration, function () use ($limit) {
 				return City::currentCountry()->withCount('posts')->take($limit)->orderByDesc('population')->orderBy('name')->get();
 			});
-			dd($cities->toArray());
 		} else {
 			$cacheId = config('country.code') . '.cities.take.' . $limit;
 			$cities = cache()->remember($cacheId, $this->cacheExpiration, function () use ($limit) {
 				return City::currentCountry()->take($limit)->orderByDesc('population')->orderBy('name')->get();
 			});
-		dd($cities->toArray());
 
 		}
 		
