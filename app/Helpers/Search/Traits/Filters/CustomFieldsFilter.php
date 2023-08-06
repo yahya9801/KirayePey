@@ -102,6 +102,18 @@ trait CustomFieldsFilter
 							->where('value', 'LIKE', $postValue);
 					});
 				}
+				if ($field->type == 'number_range') {
+					$parts = explode(",", $postValue);
+
+					// Retrieve the values from the array
+					$firstValue = $parts[0]; // Contains "0"
+					$secondValue = $parts[1]; // Contains "500
+					$this->posts->whereHas('postValues', function ($query) use ($field, $firstValue,$secondValue) {
+						$query->where('field_id', $field->id)
+								->whereRaw('value >= ?', [$firstValue])
+								->whereRaw('value <= ?', [$secondValue]);
+					});
+				}
 				
 				// Text Value ('text', 'textarea', 'url')
 				if (in_array($field->type, ['text', 'textarea', 'url'])) {

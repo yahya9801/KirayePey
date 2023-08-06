@@ -234,7 +234,7 @@
 				</div>
 			</div>
 		
-		@elseif ($modelFieldType == 'number')
+		@elseif ($modelFieldType == 'number' || $modelFieldType == 'number_range')
 			
 			{{-- number --}}
 			<div class="row mb-3 {{ $requiredClass }}">

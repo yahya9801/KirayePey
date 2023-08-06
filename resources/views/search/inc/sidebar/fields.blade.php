@@ -55,6 +55,41 @@
 				<div style="clear:both"></div>
 			
 			@endif
+			@if (data_get($field, 'type') == 'number_range')
+			<?php
+			$isPriceFilterCanBeDisplayed = ((isset($cat) && !empty($cat)) && !in_array(data_get($cat, 'type'), ['not-salable']));
+			
+			// Clear Filter Button
+			$clearFilterBtn = \App\Helpers\UrlGen::getPriceFilterClearLink($cat ?? null, $city ?? null);
+			$minArea = (int)config('settings.list.min_price', 0);
+			$maxArea = (int)config('settings.list.max_price', 10000);
+			?>
+				<div class="block-title has-arrow sidebar-header">
+					<h5>
+						<span class="fw-bold">
+							{{ (!in_array(data_get($cat, 'type'), ['job-offer', 'job-search'])) ? 'Area' : t('salary_range') }}
+						</span> {!! $clearFilterBtn !!}
+					</h5>
+				</div>
+				<div class="row px-1 gx-1 gy-1">
+					<div class="col-12 mb-3 number-range-slider" id="areaRangeSlider"></div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<input type="hidden" 
+						class="numberRange"
+						id="{{ $fieldId }}"
+						name="{{ $fieldName }}" 
+						value="{{ request()->get('minArea') != null  ? request()->get('minArea') : $minArea }} ">
+						<input type="number" min="0" id="minArea" name="minArea" onchange="updateInput2()"  class="form-control" placeholder="{{ t('Min') }}" value="{{ request()->get('minArea') != null  ? request()->get('minArea') : $minArea }}">
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<input type="number" min="0" id="maxArea" name="maxArea" onchange="updateInput2()" class="form-control" placeholder="{{ t('Max') }}" value="{{ request()->get('maxArea') != null    ? request()->get('maxArea') : $maxArea }}">
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12">
+						<button class="btn btn-default btn-block" type="submit">{{ t('go') }}</button>
+					</div>
+				</div>
+			
+			@endif
 			@if (data_get($field, 'type') == 'checkbox')
 				
 				{{-- checkbox --}}
@@ -446,5 +481,18 @@
 				$(this).val(picker.startDate.format('{{ t('datepicker_format') }}') + ' - ' + picker.endDate.format('{{ t('datepicker_format') }}'));
 			});
 		});
+	</script>
+	<script>
+		function updateInput2() {
+			// Get the value of the first input element
+			const minAreaValue = document.getElementById("minArea").value;
+			const maxAreaValue = document.getElementById("maxArea").value;
+			const value =minAreaValue + "," + maxAreaValue
+			// Perform any necessary calculations or modifications on the value
+			// For example, let's add 10 to the value of input1Value and set it as the value of input2
+
+			// Set the modified value as the value of the second input element
+			document.getElementsByClassName("numberRange")[0].value = value;
+			}
 	</script>
 @endsection

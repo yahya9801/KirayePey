@@ -112,6 +112,7 @@ class Field extends BaseModel
 			'file'              => 'File',
 			'url'               => 'URL',
 			'number'            => 'Number',
+			'number_range'      => 'Number Range',
 			'date'              => 'Date',
 			'date_time'         => 'Date Time',
 			'date_range'        => 'Date Range',
