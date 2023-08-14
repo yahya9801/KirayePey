@@ -14,3 +14,26 @@
 
 /* Your custom CSS here... */
 
+.f-category {
+    padding: 10px 10px !important;
+}
+.f-category i {
+    font-size: 35px !important;
+    color: #ccc;
+}
+.f-category h6 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.box-title h2 {
+    margin: 10px 0 !important;
+}
+.sell-your-item {
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .navbar.navbar-site ul.navbar-nav>li.postadd.nav-item {
+        min-width: 100px;
+    }
+}
