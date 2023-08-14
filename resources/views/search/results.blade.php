@@ -265,21 +265,6 @@
 		{{-- Advertising --}}
 		@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.advertising.bottom', 'layouts.inc.advertising.bottom'])
 		
-		{{-- Promo Listing Button --}}
-		<div class="container mb-3">
-			<div class="card border-light text-dark bg-light mb-3">
-				<div class="card-body text-center">
-					<h2>{{ t('do_you_have_anything') }}</h2>
-					<h5>{{ t('sell_products_and_services_online_for_free') }}</h5>
-					@if (!auth()->check() && config('settings.single.guests_can_post_listings') != '1')
-						<a href="#quickLogin" class="btn btn-border btn-post btn-listing" data-bs-toggle="modal">{{ t('start_now') }}</a>
-					@else
-						<a href="{{ \App\Helpers\UrlGen::addPost() }}" class="btn btn-border btn-post btn-listing">{{ t('start_now') }}</a>
-					@endif
-				</div>
-			</div>
-		</div>
-		
 		{{-- Category Description --}}
 		@if (isset($cat) && !empty(data_get($cat, 'description')))
 			@if (!(bool)data_get($cat, 'hide_description'))
