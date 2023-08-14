@@ -20,7 +20,7 @@ $maxSubCats = (int)data_get($sectionOptions, 'max_sub_cats');
 					<h2>
 						<span class="title-3">{{ t('Browse by') }} <span style="font-weight: bold;">{{ t('category') }}</span></span>
 						<a href="{{ \App\Helpers\UrlGen::sitemap() }}" class="sell-your-item">
-							{{ t('View more') }} <i class="fas fa-bars"></i>
+							Sub <i class="fas fa-bars"></i>
 						</a>
 					</h2>
 				</div>
