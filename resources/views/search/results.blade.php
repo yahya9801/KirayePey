@@ -230,13 +230,13 @@
 						
 						<div class="tab-content" id="myTabContent">
 							<div class="tab-pane fade show active" id="contentAll" role="tabpanel" aria-labelledby="tabAll">
-								<div id="postsList" class="category-list-wrapper posts-wrapper row no-margin">
+								<div id="postsList" class="category-list-wrapper posts-wrapper row no-margin">	
 									@if (config('settings.list.display_mode') == 'make-list')
 										@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.posts.template.list', 'search.inc.posts.template.list'])
 									@elseif (config('settings.list.display_mode') == 'make-compact')
 										@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.posts.template.compact', 'search.inc.posts.template.compact'])
 									@else
-										@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.posts.template.grid', 'search.inc.posts.template.grid'])
+										@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.posts.template.categoryGrid', 'search.inc.posts.template.categoryGrid'])
 									@endif
 								</div>
 							</div>

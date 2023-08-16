@@ -35,33 +35,36 @@
 					<div class="large-12 columns">
 						<div class="no-margin featured-list-slider {{ $carouselEl }} owl-carousel owl-theme">
 							@foreach($posts as $key => $post)
-								<div class="item">
-									<a href="{{ \App\Helpers\UrlGen::post($post) }}">
-										<span class="item-carousel-thumb">
-											<span class="photo-count">
-												<i class="fa fa-camera"></i> {{ data_get($post, 'count_pictures') }}
+								
+								@if(data_get($post, 'latestPayment.package_id') == 2) 
+									<div class="item">
+										<a href="{{ \App\Helpers\UrlGen::post($post) }}">
+											<span class="item-carousel-thumb">
+												<span class="photo-count">
+													<i class="fa fa-camera"></i> {{ data_get($post, 'count_pictures') }}
+												</span>
+												@php
+													echo imgTag(data_get($post, 'picture.filename'), 'medium', [
+															'style' => 'border: 1px solid #e7e7e7; margin-top: 2px;',
+															'alt'   => data_get($post, 'title')
+														]);
+												@endphp
 											</span>
-											@php
-												echo imgTag(data_get($post, 'picture.filename'), 'medium', [
-														'style' => 'border: 1px solid #e7e7e7; margin-top: 2px;',
-														'alt'   => data_get($post, 'title')
-													]);
-											@endphp
-										</span>
-										<span class="item-name">{{ str(data_get($post, 'title'))->limit(70) }}</span>
-										
-										@if (config('plugins.reviews.installed'))
-											@if (view()->exists('reviews::ratings-list'))
-												@include('reviews::ratings-list')
+											<span class="item-name">{{ str(data_get($post, 'title'))->limit(70) }}</span>
+											
+											@if (config('plugins.reviews.installed'))
+												@if (view()->exists('reviews::ratings-list'))
+													@include('reviews::ratings-list')
+												@endif
 											@endif
-										@endif
-										
-										<span class="price">
-											{!! data_get($post, 'price_formatted') !!}
-											{!! data_get($post, 'pricing') !!}
-										</span>
-									</a>
-								</div>
+											
+											<span class="price">
+												{!! data_get($post, 'price_formatted') !!}
+												{!! data_get($post, 'pricing') !!}
+											</span>
+										</a>
+									</div>
+								@endif
 							@endforeach
 						</div>
 					</div>
