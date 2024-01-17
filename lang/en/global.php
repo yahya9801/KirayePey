@@ -725,7 +725,7 @@ return [
 	'Click to see' => 'Click to see',
 	'Payment pending' => 'Payment pending',
 	'Error found' => 'Error found',
-	'Contact and Sitemap' => 'Contact & Sitemap',
+	'Contact and Sitemap' => 'About us & Sitemap',
 	'Mobile Apps' => 'Mobile Apps',
 	'iOS app' => 'iOS app',
 	'Android App' => 'Android App',
