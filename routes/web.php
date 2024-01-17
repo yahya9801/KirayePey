@@ -521,6 +521,7 @@ Route::namespace('App\Http\Controllers\Web')
 				Route::get(dynamicRoute('routes.pricing'), 'pricing');
 				Route::get(dynamicRoute('routes.pageBySlug'), 'cms');
 				Route::get(dynamicRoute('routes.contact'), 'contact');
+				Route::get('/about-us', 'aboutUs');
 				Route::post(dynamicRoute('routes.contact'), 'contactPost');
 			});
 		

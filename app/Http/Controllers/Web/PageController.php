@@ -136,7 +136,12 @@ class PageController extends FrontController
 		
 		return appView('pages.cms', compact('page'));
 	}
-	
+
+	public function aboutUs()
+	{
+		$page = array();
+		return appView('pages.aboutUs', compact('page'));
+	}
 	/**
 	 * @return \Illuminate\Contracts\View\View
 	 * @throws \Exception

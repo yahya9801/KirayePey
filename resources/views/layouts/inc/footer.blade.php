@@ -59,6 +59,7 @@ $socialAndAppsLinksAreEnabled = ($socialLinksAreEnabled || $appsLinksAreEnabled)
 						<div class="footer-col">
 							<h4 class="footer-title">{{ t('Contact and Sitemap') }}</h4>
 							<ul class="list-unstyled footer-nav">
+								<li><a href="/about-us"> About Us< </a></li>
 								<li><a href="{{ \App\Helpers\UrlGen::contact() }}"> {{ t('Contact') }} </a></li>
 								<li><a href="{{ \App\Helpers\UrlGen::sitemap() }}"> {{ t('sitemap') }} </a></li>
 								@if (isset($countries) && $countries->count() > 1)
