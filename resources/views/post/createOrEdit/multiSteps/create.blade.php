@@ -65,6 +65,7 @@
 											@php
 												$postTypeIdError = (isset($errors) && $errors->has('post_type_id')) ? ' is-invalid' : '';
 												$postTypeId = old('post_type_id', data_get($postInput, 'post_type_id'));
+												
 											@endphp
 											<div id="postTypeBloc" class="row mb-3 required">
 												<label class="col-md-3 col-form-label">{{ t('type') }} <sup>*</sup></label>

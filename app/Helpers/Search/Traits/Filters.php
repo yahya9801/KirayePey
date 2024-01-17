@@ -72,5 +72,8 @@ trait Filters
 		
 		// Custom Fields
 		$this->applyCustomFieldsFilter();
+
+		//dd($this->posts->get());
+
 	}
 }

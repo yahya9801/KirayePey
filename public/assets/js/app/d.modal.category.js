@@ -210,6 +210,7 @@ function appendSelectedCategory(siteUrl, languageCode, catId, catType, outputHtm
 		/* Apply category's type actions & Get category's custom-fields */
 		applyCategoryTypeActions('categoryType', catType, packageIsEnabled);
 		getCustomFieldsByCategory(siteUrl, languageCode, catId);
+		console.log(siteUrl)
 	} catch (e) {
 		console.log(e);
 	}
@@ -297,7 +298,7 @@ function getCustomFieldsByCategory(siteUrl, languageCode, catId) {
  */
 function applyCategoryTypeActions(categoryTypeFieldId, categoryTypeValue, packageIsEnabled) {
 	$('#' + categoryTypeFieldId).val(categoryTypeValue);
-	
+	console.log(categoryTypeValue)
 	/* Debug */
 	/* console.log(categoryTypeFieldId + ': ' + categoryTypeValue); */
 	

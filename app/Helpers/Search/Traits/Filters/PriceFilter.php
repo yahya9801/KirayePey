@@ -23,7 +23,7 @@ trait PriceFilter
 		if (!isset($this->having)) {
 			return;
 		}
-		
+		//dd($this);
 		$minPrice = null;
 		$maxPrice = null;
 		if (request()->filled('minPrice')) {

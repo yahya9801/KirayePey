@@ -135,7 +135,7 @@ class PostQueries
 		$count = (config('settings.single.show_listing_types'))
 			? $this->countFetch()
 			: [];
-		
+		//	dd($this->applyFilters());
 		// Get Results
 		$posts = $this->posts->paginate((int)$this->perPage);
 		
@@ -166,6 +166,7 @@ class PostQueries
 		
 		// Get Count Results
 		$count[0] = $posts->total();
+		//dd($posts->total());
 		if (config('settings.single.show_listing_types')) {
 			$count[0] = $posts->total();
 			if (request()->filled('type') && isset($count[request()->get('type')])) {
