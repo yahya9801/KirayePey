@@ -119,7 +119,7 @@ return [
     
     'footer_note' => '<strong>Sell</strong>, <strong>Offer</strong>, <strong>Rent</strong>, <strong>Bargain</strong>, <strong>Search</strong>, <strong>Buy</strong> products and services in <strong>:country</strong>. It\'s 100% free!',
     'home' => 'Home',
-    'about_us' => 'About us',
+    'about_us' => 'Important',
     'faq' => 'FAQ',
     'sitemap' => 'Sitemap',
     'i_am_abroad' => 'I am abroad',
