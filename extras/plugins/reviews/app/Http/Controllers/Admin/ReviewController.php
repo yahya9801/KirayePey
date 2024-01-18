@@ -2,7 +2,7 @@
 
 namespace extras\plugins\reviews\app\Http\Controllers\Admin;
 
-use App\Http\Controllers\Web\Admin\Panel\PanelController;
+use App\Http\Controllers\Admin\Panel\PanelController;
 
 use App\Models\Post;
 use extras\plugins\reviews\app\Http\Requests\ReviewRequest as StoreRequest;
