@@ -51,8 +51,21 @@
 				<div class="col-md-12">
 					<div class="contact-form">
 						<h5 class="list-title gray mt-0">
+							<strong>Contact Details</strong>
+						</h5>
+						<p>
+							<strong>Address: </strong> Flat No.23, Ali Centre, PECHS, Tariq Road, Karachi <br>
+							<strong>Contact Number: </strong> 0344-2587091<br>
+							<strong>Email: </strong>kirayepey@gmail.com / info@kirayepey.com <br>
+
+						</p>
+						
+
+						
+						<h5 class="list-title gray mt-0">
 							<strong>{{ t('Contact Us') }}</strong>
 						</h5>
+
 						
 						<form class="form-horizontal needs-validation" method="post" action="{{ \App\Helpers\UrlGen::contact() }}">
 							{!! csrf_field() !!}
