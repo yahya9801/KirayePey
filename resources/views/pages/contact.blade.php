@@ -53,7 +53,7 @@
 						<h5 class="list-title gray mt-0">
 							<strong>Contact Details</strong>
 						</h5>
-						<p>
+						<p style="font-size: 14px"> 
 							<strong>Address: </strong> Flat No.23, Ali Centre, PECHS, Tariq Road, Karachi <br>
 							<strong>Contact Number: </strong> 0344-2587091<br>
 							<strong>Email: </strong>kirayepey@gmail.com / info@kirayepey.com <br>
