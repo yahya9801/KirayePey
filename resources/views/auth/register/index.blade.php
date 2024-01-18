@@ -159,11 +159,9 @@
 											$phoneError = (isset($errors) && $errors->has('phone')) ? ' is-invalid' : '';
 											$phoneCountryValue = config('country.code');
 										@endphp
-										<div class="row mb-3 auth-field-item required{{ $forceToDisplay }}">
+										<div class="row mb-3 auth-field-item required">
 											<label class="col-md-3 col-form-label pt-0" for="phone">{{ t('phone_number') }}
-												@if (getAuthField() == 'phone')
 													<sup>*</sup>
-												@endif
 											</label>
 											<div class="col-md-9 col-lg-6">
 												<input id="phone" name="phone"
