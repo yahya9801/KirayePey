@@ -66,7 +66,7 @@
 					</div>
 					
 					<div class="col-xl-4 col-md-4 col-sm-12 col-12">
-						<input name="q" class="form-control keyword" type="text" placeholder="{{ t('what') }}" value="{{ $keywords }}">
+						<input name="q" class="form-control keyword" type="text" placeholder="Product/service?" value="{{ $keywords }}">
 					</div>
 					
 					<input type="hidden" id="rSearch" name="r" value="{{ $qAdminName }}">
@@ -78,7 +78,7 @@
 								   type="text"
 								   id="locSearch"
 								   name="location"
-								   placeholder="{{ t('where') }}"
+								   placeholder="Location?"
 								   value="{{ $qLocation }}"
 								   data-bs-placement="top"
 								   data-bs-toggle="tooltipHover"
@@ -89,7 +89,7 @@
 								   type="text"
 								   id="locSearch"
 								   name="location"
-								   placeholder="{{ t('where') }}"
+								   placeholder="Location?"
 								   value="{{ $qLocation }}"
 							>
 						@endif

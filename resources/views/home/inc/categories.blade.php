@@ -18,14 +18,13 @@ $maxSubCats = (int)data_get($sectionOptions, 'max_sub_cats');
 			<div class="col-xl-12 box-title no-border">
 				<div class="inner">
 					<h2>
-						<span class="title-3">{{ t('Browse by') }} <span style="font-weight: bold;">{{ t('category') }}</span></span>
+						<span class="title-3"><span style="font-weight: bold;">{{ t('category') }}</span></span>
 						<a href="{{ \App\Helpers\UrlGen::sitemap() }}" class="sell-your-item">
 							Sub <i class="fas fa-bars"></i>
 						</a>
 					</h2>
 				</div>
 			</div>
-			
 			@if ($catDisplayType == 'c_picture_list')
 				
 				@if (!empty($categories))
@@ -48,7 +47,7 @@ $maxSubCats = (int)data_get($sectionOptions, 'max_sub_cats');
 				
 				@if (!empty($categories))
 					@foreach($categories as $key => $cat)
-						<div class="col-lg-2 col-md-3 col-sm-4 col-6 f-category">
+						<div class="col-md-3 col-sm-4 col-6 f-category">
 							<a href="{{ \App\Helpers\UrlGen::category($cat) }}">
 								@if (in_array(config('settings.list.show_category_icon'), [2, 6, 7, 8]))
 									<i class="{{ data_get($cat, 'icon_class') ?? 'fas fa-folder' }}"></i>

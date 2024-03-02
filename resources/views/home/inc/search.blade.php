@@ -45,7 +45,7 @@
 								<div class="search-col-inner">
 									<i class="fas {{ (config('lang.direction')=='rtl') ? 'fa-angle-double-left' : 'fa-angle-double-right' }} icon-append"></i>
 									<div class="search-col-input">
-										<input class="form-control has-icon" name="q" placeholder="{{ t('what') }}" type="text" value="">
+										<input class="form-control has-icon" name="q" placeholder="product/service" type="text" value="">
 									</div>
 								</div>
 							</div>
@@ -60,7 +60,7 @@
 											<input class="form-control locinput input-rel searchtag-input has-icon"
 												   id="locSearch"
 												   name="location"
-												   placeholder="{{ t('where') }}"
+												   placeholder="Location"
 												   type="text"
 												   value=""
 												   data-bs-placement="top"
@@ -71,7 +71,7 @@
 											<input class="form-control locinput input-rel searchtag-input has-icon"
 												   id="locSearch"
 												   name="location"
-												   placeholder="{{ t('where') }}"
+												   placeholder="Location ?"
 												   type="text"
 												   value=""
 											>
@@ -109,7 +109,7 @@
 							<div class="search-col-inner">
 								<i class="fas {{ (config('lang.direction')=='rtl') ? 'fa-angle-double-left' : 'fa-angle-double-right' }} icon-append"></i>
 								<div class="search-col-input">
-									<input class="form-control has-icon" name="q" placeholder="{{ t('what') }}" type="text" value="">
+									<input class="form-control has-icon" name="q" placeholder="product/service" type="text" value="">
 								</div>
 							</div>
 						</div>
@@ -124,7 +124,7 @@
 										<input class="form-control locinput input-rel searchtag-input has-icon"
 											   id="locSearch"
 											   name="location"
-											   placeholder="{{ t('where') }}"
+											   placeholder="Location"
 											   type="text"
 											   value=""
 											   data-bs-placement="top"
@@ -135,7 +135,7 @@
 										<input class="form-control locinput input-rel searchtag-input has-icon"
 											   id="locSearch"
 											   name="location"
-											   placeholder="{{ t('where') }}"
+											   placeholder="Location"
 											   type="text"
 											   value=""
 										>

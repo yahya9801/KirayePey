@@ -37,3 +37,11 @@
         min-width: 100px;
     }
 }
+
+.homepage-logo {
+    transition: transform 0.3s ease-in-out !important; 
+ }
+ 
+ .homepage-logo:hover {
+     transform: scale(1.2) !important; /* Adjust the scale factor for zoom-out effect */
+ }

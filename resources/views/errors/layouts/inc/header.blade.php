@@ -20,7 +20,7 @@ if (request()->segment(1) != 'countries') {
 			
 			<div class="navbar-identity p-sm-0">
 				{{-- Logo --}}
-				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
+				<a href="{{ url('/') }}" class="navbar-brand logo logo-title ">
 					<img src="{{ config('settings.app.logo_url') }}" class="main-logo" style="height: 40px;"/>
 				</a>
 				{{-- Toggle Nav (Mobile) --}}

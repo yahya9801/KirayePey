@@ -28,7 +28,7 @@ if ($multiCountriesIsEnabled) {
 				{{-- Logo --}}
 				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
 					<img src="{{ config('settings.app.logo_url') }}"
-						 alt="{{ strtolower(config('settings.app.name')) }}" class="main-logo" data-bs-placement="bottom"
+						 alt="{{ strtolower(config('settings.app.name')) }}" class="main-logo homepage-logo" data-bs-placement="bottom"
 						 data-bs-toggle="tooltip"
 						 title="{!! $logoLabel !!}"/>
 				</a>
