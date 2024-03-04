@@ -176,7 +176,7 @@ return [
     'message_sent_to_moderators' => 'Your message has been sent to our moderators.',
     'message_sent_to_moderators_thanks' => 'Your message has been sent to our moderators. Thank you.',
 	
-    'do_you_have_something_text' => 'Do you have something to sell, to rent, any service to offer or a job offer? Post it at :appName, its free, for local business and very easy to use!',
+    'do_you_have_something_text' => 'Do you have something to rent? Post it at :appName, its very easy to use!',
     'create_and_manage_items' => 'Create and Manage Items',
     'become_a_best_seller_or_buyer_text' => 'Become a best seller or buyer. Create and Manage your listings. Repost your old listings, etc.',
     'create_your_favorite_listings_list' => 'Create your favorite listings list.',

@@ -31,6 +31,7 @@ trait Select
 			'country_code',
 			'user_id',
 			'category_id',
+			'pricing',
 			'post_type_id',
 			'title',
 			$this->postsTable . '.price',

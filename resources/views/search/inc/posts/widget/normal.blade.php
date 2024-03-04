@@ -2,7 +2,7 @@
 	$widget ??= [];
 	$posts = (array)data_get($widget, 'posts');
 	$totalPosts = (int)data_get($widget, 'totalPosts', 0);
-	
+	// dd($posts);
 	$sectionOptions ??= [];
 	$hideOnMobile = (data_get($sectionOptions, 'hide_on_mobile') == '1') ? ' hidden-sm' : '';
 @endphp

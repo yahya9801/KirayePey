@@ -163,8 +163,7 @@
 											<label class="col-md-3 col-form-label" for="pricing">Select Pricing Rate <sup>*</sup></label>
 											<div class="col-md-8">
 												<select id="pricing" name="pricing" class="form-control large-data-selecter">
-													<option selected value="">Choose your Rate</option>
-													<option value="/hr">Per hour(/hr) </option>
+													<option selected value="/hr">Per hour(/hr) </option>
 													<option value="/day">Per day(/day) </option>
 													<option value="/month">Per month(/month) </option>
 												</select>

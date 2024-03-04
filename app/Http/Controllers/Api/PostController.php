@@ -85,6 +85,7 @@ class PostController extends BaseController
 	 */
 	public function index(): \Illuminate\Http\JsonResponse
 	{
+		// dd('Here');
 		return $this->getPosts();
 	}
 	

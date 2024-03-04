@@ -55,6 +55,7 @@ trait LatestOrPremium
 			'category_id',
 			'post_type_id',
 			'title',
+			'pricing',
 			$postsTable . '.price',
 			$postsTable . '.securityDeposit',
 			$postsTable . '.securityDepositAmount',

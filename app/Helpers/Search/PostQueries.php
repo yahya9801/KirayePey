@@ -135,9 +135,10 @@ class PostQueries
 		$count = (config('settings.single.show_listing_types'))
 			? $this->countFetch()
 			: [];
-		//	dd($this->applyFilters());
+			// dd($this->applyFilters());
 		// Get Results
 		$posts = $this->posts->paginate((int)$this->perPage);
+		// dd( $this->posts);
 		
 		// Remove Distance from Request
 		$this->removeDistanceFromRequest();
@@ -145,7 +146,7 @@ class PostQueries
 		// If the request is made from the app's Web environment,
 		// use the Web URL as the pagination's base URL
 		$posts = setPaginationBaseUrl($posts);
-		
+		// dd(config('settings.single.show_listing_types'));
 		// Add eventual web queries to $queriesToRemove
 		$queriesToRemove = array_merge($queriesToRemove, $this->webGlobalQueries);
 		$webController = null;
@@ -181,6 +182,7 @@ class PostQueries
 			}
 		}
 		
+		
 		// Wrap the listings for API calls
 		$postsCollection = new EntityCollection('PostController', $posts);
 		$message = ($posts->count() <= 0) ? t('no_posts_found') : null;
@@ -198,7 +200,6 @@ class PostQueries
 			'current' => self::$distance,
 			'max'     => self::$maxDistance,
 		];
-		
 		// Results Data
 		$data = [
 			'message'   => $message,
@@ -254,7 +255,7 @@ class PostQueries
 			
 			$count[$postType->id] = (isset($result[0])) ? (int)$result[0]->total : 0;
 		}
-		
+		dd($count);
 		return $count;
 	}
 	

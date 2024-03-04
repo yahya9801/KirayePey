@@ -18,6 +18,7 @@
 	$apiExtra ??= [];
 	$count = (array)data_get($apiExtra, 'count');
 	$posts = (array)data_get($apiResult, 'data');
+	// dd($posts);
 	$totalPosts = (int)data_get($apiResult, 'meta.total', 0);
 	$tags = (array)data_get($apiExtra, 'tags');
 	

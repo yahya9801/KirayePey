@@ -167,7 +167,6 @@ trait SectionDataTrait
 			$postsResult = $postsCollection->toResponse(request())->getData();
 			
 			request()->replace($savedQueries);
-			
 			$latest = [
 				'title'      => ($orderBy == 'random') ? t('Home - Random Listings') : t('Home - Latest Listings'),
 				'link'       => UrlGen::searchWithoutQuery(),

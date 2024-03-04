@@ -418,15 +418,16 @@
 		text-transform: none;
 		text-align: center;
 		color: #333;
-		background-image: linear-gradient(to bottom, #ffeb43 0%, #fcde11 100%);
+		background-image: linear-gradient(to bottom, #efa6ed 0%, rgb(219, 179, 217) 100%);
 		background-repeat: repeat-x;
-		background-color: #fff447;
-		border: 1px solid #f6d80f;
+		background-color: #c8a2c7;
+		border: 1px solid #aa91aa;
 		border-radius: 6px;
 		box-shadow: 0 1px 1px 0 #aaa;
 		line-height: 17px;
 		padding: 12px 20px 12px;
 	}
+
 	.skin .btn-listing:hover,
 	.skin .btn-listing:focus,
 	.skin .btn-listing:active,
@@ -436,8 +437,8 @@
 	.skin .show > .btn-listing.dropdown-toggle,
 	.skin .open .dropdown-toggle.btn-listing {
 		color: #333;
-		background-color: #fff447;
-		border-color: #f6d80f;
+		background-color: #c8a2c7;
+		border-color: #aa91aa;
 		background-image: none;
 	}
 	.skin .btn-check:focus+.btn-listing,

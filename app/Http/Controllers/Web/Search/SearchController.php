@@ -35,6 +35,7 @@ class SearchController extends BaseController
 		$headers = [
 			'X-WEB-CONTROLLER' => class_basename(get_class($this)),
 		];
+		// dd($queryParams);
 		$data = makeApiRequest('get', $endpoint, $queryParams, $headers);
 		
 		$apiMessage = $this->handleHttpError($data);
