@@ -79,7 +79,7 @@
 				
 				<div class="col-sm-3 col-12 text-end price-box" style="white-space: nowrap;">
 					<h2 class="item-price">
-						{!! data_get($post, 'price_formatted') !!}
+						{!! data_get($post, 'price_formatted'). data_get($post, 'pricing') !!}
 					</h2>
 					@if (!empty(data_get($post, 'latestPayment.package')))
 						@if (data_get($post, 'latestPayment.package.has_badge') == 1)

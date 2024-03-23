@@ -59,7 +59,7 @@
 									{{ data_get($post, 'price_label') }}
 								</span>
 								<span>
-									{!! data_get($post, 'price_formatted') !!}
+									{!! data_get($post, 'price_formatted'). data_get($post, 'pricing') !!}
 									@if (data_get($post, 'negotiable') == 1)
 										<small class="label bg-success"> {{ t('negotiable') }}</small>
 									@endif

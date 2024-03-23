@@ -116,7 +116,7 @@
 													
 													<div class="col-md-2 text-end text-center-xs price-box">
 														<h4 class="item-price">
-															{!! data_get($post, 'price_formatted') !!}
+															{!! data_get($post, 'price_formatted'). data_get($post, 'pricing') !!}
 														</h4>
 													</div>
 												</div>
