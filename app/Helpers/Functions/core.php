@@ -1783,6 +1783,7 @@ function getUrlPageByType(?string $type, string $locale = null): string
  */
 function getUploadFileTypes(?string $uploadType = 'file', bool $jsFormat = false)
 {
+
 	if ($uploadType == 'image') {
 		$types = config('settings.upload.image_types', 'jpg,jpeg,gif,png');
 	} else {
@@ -1797,7 +1798,6 @@ function getUploadFileTypes(?string $uploadType = 'file', bool $jsFormat = false
 		$types = array_filter($types, function ($value) { return $value !== ''; });
 		$types = json_encode($types);
 	}
-	
 	return $types;
 }
 

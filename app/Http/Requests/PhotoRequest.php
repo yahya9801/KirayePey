@@ -51,6 +51,8 @@ class PhotoRequest extends Request
 				// If no picture is uploaded & If picture is mandatory,
 				// Don't allow user to go to the next page.
 				$picturesInput = (array)session()->get('picturesInput');
+					
+
 				if (empty($picturesInput)) {
 					if (config('settings.single.picture_mandatory')) {
 						$rules['pictures'] = ['required'];
@@ -58,7 +60,6 @@ class PhotoRequest extends Request
 				}
 			}
 		}
-		
 		return $rules;
 	}
 	
@@ -91,11 +92,15 @@ class PhotoRequest extends Request
 		$messages = [];
 		
 		if ($this->file('pictures')) {
+			
 			$files = $this->file('pictures');
+			
 			foreach ($files as $key => $file) {
 				// uploaded
 				$maxSize = (int)config('settings.upload.max_image_size', 1000); // In KB
 				$maxSize = $maxSize * 1024; // Convert KB to Bytes
+				 //dd(@ini_get('post_max_size'));
+
 				$msg = t('large_file_uploaded_error', [
 					'field'   => t('picture X', ['key' => ($key + 1)]),
 					'maxSize' => readableBytes($maxSize),
@@ -124,7 +129,6 @@ class PhotoRequest extends Request
 		if (config('settings.single.picture_mandatory')) {
 			$messages['pictures.required'] = t('pictures_mandatory_text');
 		}
-		
 		return $messages;
 	}
 }

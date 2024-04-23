@@ -22,6 +22,7 @@ use App\Models\Post;
 use App\Models\Scopes\ReviewedScope;
 use App\Models\Scopes\VerifiedScope;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 trait SubmitTrait
 {
@@ -100,6 +101,11 @@ trait SubmitTrait
 				$request->session()->put('postId', $postId);
 			}
 			
+			// $post = Post::find($postId);
+			// if($post) {
+			// 	$post->deleted_at = Carbon::now();
+			// 	$post->save();
+			// }
 			// Clear Temporary Inputs & Files
 			$this->clearTemporaryInput();
 		} else {
@@ -203,6 +209,7 @@ trait SubmitTrait
 				flash($mailMessage)->error();
 			}
 		}
+		
 		
 		return redirect($nextUrl);
 	}

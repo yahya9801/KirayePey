@@ -272,6 +272,7 @@ class CreateController extends FrontController
 	 */
 	public function postPicturesStep(PhotoRequest $request)
 	{
+		 //dd($request);
 		if (!$request->ajax()) {
 			if ($this->step($request) < 1) {
 				$backUrl = url($this->baseUrl);
@@ -316,6 +317,7 @@ class CreateController extends FrontController
 			$newPicturesInput = array_merge($savedPicturesInput, $picturesInput);
 			
 			$request->session()->put('picturesInput', $newPicturesInput);
+
 		}
 		
 		// AJAX response
@@ -364,7 +366,7 @@ class CreateController extends FrontController
 			
 			$nextUrl = url('posts/create/payment');
 			$nextUrl = qsUrl($nextUrl, request()->only(['package']), null, false);
-			
+			// return $this->storeInputDataInDatabase($request);
 			return redirect($nextUrl);
 		} else {
 			$request->session()->flash('message', t('your_listing_has_been_created'));

@@ -74,10 +74,7 @@
 				
 				<tr>
 					<td class="text-start align-middle p-3">
-						@includeFirst([
-							config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.payment-methods',
-							'post.createOrEdit.inc.payment-methods'
-						])
+						
 					</td>
 					<td class="text-end align-middle p-3">
 						<p class="mb-0">
@@ -95,9 +92,6 @@
 		</div>
 	</div>
 	
-	@includeFirst([
-		config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.payment-methods.plugins',
-		'post.createOrEdit.inc.payment-methods.plugins'
-	])
+	
 
 @endif
