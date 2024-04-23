@@ -37,6 +37,8 @@ use App\Models\Scopes\ReviewedScope;
 use App\Observers\Traits\PictureTrait;
 use Illuminate\Http\Request;
 use Larapen\LaravelMetaTags\Facades\MetaTag;
+use App\Http\Controllers\Api\Base\ApiResponseTrait;
+
 
 class CreateController extends FrontController
 {
@@ -47,6 +49,7 @@ class CreateController extends FrontController
 	use PricingPageUrlTrait;
 	use PictureTrait, ClearTmpInputTrait;
 	use SubmitTrait;
+	use ApiResponseTrait;
 	
 	protected $baseUrl = '/posts/create';
 	protected $cfTmpUploadDir = 'temporary';
