@@ -414,19 +414,9 @@ class CreateController extends FrontController
 	 * @param \App\Http\Requests\PackageRequest $request
 	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
 	 */
-	public function postPaymentStep(PackageRequest $request)
+	public function postPaymentStep(Request $request)
 	{
-		if ($this->step($request) < 2) {
-			if (config('settings.single.picture_mandatory')) {
-				$backUrl = url($this->baseUrl . '/photos');
-				$backUrl = qsUrl($backUrl, request()->only(['package']), null, false);
-				
-				return redirect($backUrl);
-			}
-		}
-		
-		$request->session()->put('paymentInput', $request->validated());
-		
+
 		return $this->storeInputDataInDatabase($request);
 	}
 	

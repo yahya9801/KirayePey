@@ -32,7 +32,6 @@ class Offlinepayment extends Payment
 	public static function sendPayment(Request $request, Post|User $payable, array $resData = [])
 	{
 		// Messages
-		
 		self::$msg['checkout']['success'] = trans('offlinepayment::messages.We have received your offline payment request.') . ' ' .
 			trans('offlinepayment::messages.We will wait to receive your payment to process your request.');
 		
@@ -92,6 +91,7 @@ class Offlinepayment extends Payment
 			'currency_code'     => $package->currency_code,
 			'transaction_id'	=> 123,
 		];
+		
 		/*
 		// API Parameters
 		$params = parent::getLocalParameters($request, $payable, $package);
@@ -104,7 +104,9 @@ class Offlinepayment extends Payment
 		}
 		*/
 		// Save the Payment in database
+		
 		$resData = self::register($payable, $params, $resData);
+		
 		//dd($resData);
 		
 		if (isFromApi()) {
@@ -151,7 +153,6 @@ class Offlinepayment extends Payment
 		
 		// Get the payable full name with namespace
 		$payableType = get_class($payable);
-		
 		$isPromoting = (str_ends_with($payableType, 'Post'));
 		$isSubscripting = (str_ends_with($payableType, 'User'));
 		
@@ -159,21 +160,24 @@ class Offlinepayment extends Payment
 		if ($isPromoting) {
 			$payable->reviewed_at = (!empty($payable->reviewed_at)) ? now() : null;
 		}
-		$payable->featured = ($payable->featured == 1) ? 1 : 0;
+		$package_id = data_get($params, 'package_id');
+		
+		$payable->featured = ($package_id > 1) ? 1 : 0;
 		$payable->save();
 		
 		// Save the payment
 		$paymentInfo = [
-			'payable_id'        => $payable->id,
+			'post_id'        => $payable->id,
 			'payable_type'      => $payableType,
 			'package_id'        => data_get($params, 'package_id'),
 			'payment_method_id' => data_get($params, 'payment_method_id'),
 			'transaction_id'    => data_get($params, 'transaction_id'),
-			'amount'            => data_get($params, 'amount', 0),
+			'amount'            => data_get($params, 'amount', 1),
 			//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
 			//'period_end'        => data_get($params, 'package.period_end'),
-			'active'            => 0,
+			'active'            => 1,
 		];
+		
 		$payment = new PaymentModel($paymentInfo);
 		$payment->save();
 		
@@ -212,7 +216,6 @@ class Offlinepayment extends Payment
 				// Not Necessary To Notify
 			}
 		}
-		
 		return $resData;
 	}
 }

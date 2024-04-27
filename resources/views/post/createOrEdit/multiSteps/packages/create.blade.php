@@ -40,7 +40,7 @@
 						
                         <div class="row">
                             <div class="col-sm-12">
-                                <form class="form" id="postForm" method="POST" action="{{ url()->current() }}">
+                                <form class="form" id="postForm" method="POST" action="/posts/redirect/payment">
                                     {!! csrf_field() !!}
                                     <fieldset>
 										
@@ -124,8 +124,10 @@
 				/* Form Default Submission */
 				$('#submitPostForm').on('click', function (e) {
 					e.preventDefault();
+					console.log('packagePrice')
 					
-					if (packagePrice <= 0) {
+					console.log(packagePrice)
+					if (packagePrice > 0) {
 						$('#postForm').submit();
 					}
 					

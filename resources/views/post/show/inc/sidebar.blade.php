@@ -83,11 +83,11 @@
 							<a href="{{ url('posts/' . data_get($post, 'id') . '/photos') }}" class="btn btn-default btn-block">
 								<i class="fas fa-camera"></i> {{ t('Update Photos') }}
 							</a>
-							@if ($countPackages > 0 && $countPaymentMethods > 0)
+							{{-- @if ($countPackages > 0 && $countPaymentMethods > 0)
 								<a href="{{ url('posts/' . data_get($post, 'id') . '/payment') }}" class="btn btn-success btn-block">
 									<i class="far fa-check-circle"></i> {{ t('Make It Premium') }}
 								</a>
-							@endif
+							@endif --}}
 						@endif
 						@if (empty(data_get($post, 'archived_at')) && isVerifiedPost($post))
 							<a href="{{ url('account/posts/list/' . data_get($post, 'id') . '/offline') }}" class="btn btn-warning btn-block confirm-simple-action">

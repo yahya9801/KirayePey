@@ -25,6 +25,7 @@ use App\Http\Controllers\Web\Locale\LocaleController;
 use App\Http\Controllers\Web\PageController;
 use App\Http\Controllers\Web\Post\CreateOrEdit\MultiSteps\CreateController;
 use App\Http\Controllers\Web\Post\CreateOrEdit\MultiSteps\EditController;
+use App\Http\Controllers\Web\Post\CreateOrEdit\MultiSteps\HblPaymentGatewayController;
 use App\Http\Controllers\Web\Post\CreateOrEdit\MultiSteps\PaymentController;
 use App\Http\Controllers\Web\Post\CreateOrEdit\MultiSteps\PhotoController;
 use App\Http\Controllers\Web\Post\CreateOrEdit\SingleStep\CreateController as SingleCreateController;
@@ -310,6 +311,7 @@ Route::namespace('App\Http\Controllers\Web')
 						Route::post('posts/create/photos/reorder', 'reorderPictures');
 						Route::get('posts/create/payment', 'getPaymentStep');
 						Route::post('posts/create/payment', 'postPaymentStep');
+						Route::get('posts/submit/payment', 'postPaymentStep');
 						Route::post('posts/create/finish', 'finish');
 						Route::get('posts/create/finish', 'finish');
 						
@@ -324,6 +326,12 @@ Route::namespace('App\Http\Controllers\Web')
 						Route::get('posts/{id}/verify/resend/sms', 'reSendPhoneVerification');
 						Route::get('posts/verify/{field}/{token?}', 'verification');
 						Route::post('posts/verify/{field}/{token?}', 'verification');
+					});
+
+				Route::namespace('CreateOrEdit\MultiSteps')
+					->controller(HblPaymentGatewayController::class)
+					->group(function ($router) {
+						Route::post('posts/redirect/payment', 'rerouteToHblPaymentGateway');
 					});
 				
 				Route::middleware(['auth'])
