@@ -111,13 +111,13 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
 //print_r($arrJson);exit;
         $arrJson=json_encode($this->recParamsEncryption($arrJson,$this));
 
-        $url="https://testpaymentapi.hbl.com/hblpay/api/checkout";
+        $url="https://digitalbankingportal.hbl.com/hostedcheckout/api/checkout";
 //debug(callAPI("POST",$url,$cyb->encrypt_RSA($stringData)));
         $jsonCyberSourceResult=json_decode($this->callAPI("POST",$url,$arrJson),true);
      //   dd($jsonCyberSourceResult)
         if($jsonCyberSourceResult["IsSuccess"] && $jsonCyberSourceResult["ResponseMessage"]=="Success" && $jsonCyberSourceResult["ResponseCode"]==0){
             $sessionId=base64_encode($jsonCyberSourceResult["Data"]["SESSION_ID"]);
-            $nextUrl = "https://testpaymentapi.hbl.com/HBLPay/Site/index.html#/checkout?data=$sessionId";
+            $nextUrl = "https://digitalbankingportal.hbl.com/hostedcheckout/site/index.html#/checkout?data=$sessionId";
             return redirect($nextUrl);
         }
     }
@@ -147,8 +147,8 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
             "USER_ID" => "kirayepayadmin",
             "PASSWORD" => "@@Dpe8SdJU",
             "CLIENT_NAME" => "Kirayepay",
-            "RETURN_URL" => "http://localhost:8000/posts/submit/payment",
-            "CANCEL_URL" => "http://localhost:8000/posts/submit/payment",
+            "RETURN_URL" => "https://test.kirayepey.com/posts/submit/payment",
+            "CANCEL_URL" => "https://test.kirayepey.com/posts/submit/payment",
             "CHANNEL" => "HBLPay_kirayepay_website",
             "TYPE_ID" => "0",
             "ORDER" => [
@@ -272,7 +272,7 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
 
 
     function callAPI($method, $url, $data){
-        $is_live = 'no';
+        $is_live = 'yes';
         $use_proxy = 'no';
         $curl = curl_init();
         switch ($method) {
