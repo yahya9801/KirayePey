@@ -315,6 +315,7 @@ Route::namespace('App\Http\Controllers\Web')
 						Route::post('posts/create/finish', 'finish');
 						Route::get('posts/create/finish', 'finish');
 						
+
 						// Payment Gateway Success & Cancel
 						Route::get('posts/create/payment/success', 'paymentConfirmation');
 						Route::post('posts/create/payment/success', 'paymentConfirmation');
@@ -332,6 +333,7 @@ Route::namespace('App\Http\Controllers\Web')
 					->controller(HblPaymentGatewayController::class)
 					->group(function ($router) {
 						Route::post('posts/redirect/payment', 'rerouteToHblPaymentGateway');
+						
 					});
 				
 				Route::middleware(['auth'])

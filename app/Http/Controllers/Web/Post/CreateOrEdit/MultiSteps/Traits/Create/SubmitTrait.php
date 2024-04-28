@@ -23,6 +23,7 @@ use App\Models\Scopes\ReviewedScope;
 use App\Models\Scopes\VerifiedScope;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Models\Payment as PaymentModel;
 
 trait SubmitTrait
 {
@@ -99,7 +100,42 @@ tqVEwiuxLvnJKk+iv7zS9aF2i4j//k9/gO+CfGdmWodkV/yLaEWQcf9pSHaY1CI=
 			$responseMsg = str_replace("RESPONSE_MESSAGE=","",$splitToArray[1]);
 			$orderRefNumber = str_replace("ORDER_REF_NUMBER=","",$splitToArray[2]);
 			$paymentType=str_replace("PAYMENT_TYPE=","",$splitToArray[3]);
-			//dd($responseMsg);
+			if($responseCode == 100){
+				$msgToDisplay = $responseMsg;
+			}
+			else {
+				$msgToDisplay = $responseMsg;
+				$package = Package::find($request->session()->get('paymentInput')["package_id"]);
+				$params = [
+					'payment_method_id' => $request->session()->get('paymentInput')["payment_method_id"],
+					'post_id'           => "",
+					'package_id'        => $package->id,
+					'amount'            => $package->price,
+					'currency_code'     => $package->currency_code,
+					'transaction_id'	=> $request->session()->get('REFERENCE_NUMBER'),
+				];
+				
+				$paymentInfo = [
+					'post_id'        => "",
+					'payable_type'      => "",
+					'package_id'        => data_get($params, 'package_id'),
+					'payment_method_id' => data_get($params, 'payment_method_id'),
+					'transaction_id'    => data_get($params, 'transaction_id'),
+					'amount'            => data_get($params, 'amount', 1),
+					//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
+					//'period_end'        => data_get($params, 'package.period_end'),
+					'active'            => 0,
+				];
+				$payment = new PaymentModel($paymentInfo);
+				$payment->save();
+
+
+				flash($msgToDisplay)->error();
+				$previousUrl = $this->apiUri['previousUrl'];
+				return redirect($previousUrl)->withInput();
+			}
+			
+			
 		}
 
 
@@ -212,25 +248,16 @@ tqVEwiuxLvnJKk+iv7zS9aF2i4j//k9/gO+CfGdmWodkV/yLaEWQcf9pSHaY1CI=
 							$previousUrl = $this->apiUri['previousUrl'];
 							
 							// this data is wrapped from HBl payment gateway need to decode it 
-							if(isset($request->data) && $request->data){
-								$encryptedData = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
-								$encryptedData = str_replace("data=", "", $encryptedData);
-								// $url_params = decryptData($encryptedData, $privateKey);
-								$url_params = $this->decryptData($encryptedData, $this->ourPrivateKey);
-								$splitToArray = explode("&",$url_params);
-								$responseCode = str_replace("RESPONSE_CODE=","",$splitToArray[0]);
-								$responseMsg = str_replace("RESPONSE_MESSAGE=","",$splitToArray[1]);
-								$orderRefNumber = str_replace("ORDER_REF_NUMBER=","",$splitToArray[2]);
-								$paymentType=str_replace("PAYMENT_TYPE=","",$splitToArray[3]);
-								
-							}
+							
 							// dd('Im here');
 							$paymentData = $this->sendPayment($request, $post);
 							
 							// Check if a Payment has been sent
 							if (data_get($paymentData, 'extra.payment')) {
-								$paymentMessage = data_get($paymentData, 'extra.payment.message');
+								$paymentMessage = data_get($paymentData, 'message');
 								if (data_get($paymentData, 'extra.payment.success')) {
+									$paymentMessage  = $paymentMessage .' ' .$msgToDisplay;
+									dd($paymentMessage);
 									flash($paymentMessage)->success();
 									
 									if (data_get($paymentData, 'extra.nextUrl')) {

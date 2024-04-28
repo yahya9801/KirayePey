@@ -114,6 +114,7 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
         $url="https://testpaymentapi.hbl.com/hblpay/api/checkout";
 //debug(callAPI("POST",$url,$cyb->encrypt_RSA($stringData)));
         $jsonCyberSourceResult=json_decode($this->callAPI("POST",$url,$arrJson),true);
+     //   dd($jsonCyberSourceResult)
         if($jsonCyberSourceResult["IsSuccess"] && $jsonCyberSourceResult["ResponseMessage"]=="Success" && $jsonCyberSourceResult["ResponseCode"]==0){
             $sessionId=base64_encode($jsonCyberSourceResult["Data"]["SESSION_ID"]);
             $nextUrl = "https://testpaymentapi.hbl.com/HBLPay/Site/index.html#/checkout?data=$sessionId";
@@ -147,7 +148,7 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
             "PASSWORD" => "@@Dpe8SdJU",
             "CLIENT_NAME" => "Kirayepay",
             "RETURN_URL" => "http://localhost:8000/posts/submit/payment",
-            "CANCEL_URL" => "http://localhost/HBLPay_php/fail.php",
+            "CANCEL_URL" => "http://localhost:8000/posts/submit/payment",
             "CHANNEL" => "HBLPay_kirayepay_website",
             "TYPE_ID" => "0",
             "ORDER" => [
@@ -163,6 +164,12 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
                         "SUB_CATEGORY" => "Test Sub Category"
                     ]
                 ]
+            ],
+            "SHIPPING_DETAIL" => [
+                "NAME" => "DHL SERVICE",
+                "ICON_PATH" => null,
+                "DELIEVERY_DAYS" => "7",
+                "SHIPPING_COST" => "0"
             ],
             "ADDITIONAL_DATA" => [
                 "REFERENCE_NUMBER" => "kirayepey$randomNumber",
@@ -191,6 +198,7 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
 
         $stringData = json_encode($data);
         // dd($stringData);
+        $request->session()->put('REFERENCE_NUMBER', "kirayepey$randomNumber");
         return $stringData;
     }
 

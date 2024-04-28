@@ -44,7 +44,6 @@ class Offlinepayment extends Payment
 		// Don't make a payment if 'price' = 0 or null
 		if (empty($package) || $package->price <= 0) {
 			$message = 'Package does not exist or its price is <= 0.';
-			dd($payable);
 			
 			if (isFromApi()) {
 				$resData['extra']['payment']['message'] = $message;
@@ -89,7 +88,7 @@ class Offlinepayment extends Payment
 			'package_id'        => $package->id,
 			'amount'            => $package->price,
 			'currency_code'     => $package->currency_code,
-			'transaction_id'	=> 123,
+			'transaction_id'	=> $request->session()->get('REFERENCE_NUMBER'),
 		];
 		
 		/*
@@ -107,7 +106,7 @@ class Offlinepayment extends Payment
 		
 		$resData = self::register($payable, $params, $resData);
 		
-		//dd($resData);
+		
 		
 		if (isFromApi()) {
 			
@@ -115,20 +114,7 @@ class Offlinepayment extends Payment
 			
 		} else {
 			
-			if (data_get($resData, 'extra.payment.success')) {
-				flash(data_get($resData, 'extra.payment.message'))->success();
-			} else {
-				flash(data_get($resData, 'extra.payment.message'))->error();
-			}
-			
-			if (data_get($resData, 'success')) {
-				session()->flash('message', data_get($resData, 'message'));
-				
-				return redirect()->to(self::$uri['nextUrl']);
-			} else {
-				// Maybe never called
-				return redirect()->to(self::$uri['nextUrl'])->withErrors(['error' => data_get($resData, 'message')]);
-			}
+			return $resData;
 			
 		}
 	}
