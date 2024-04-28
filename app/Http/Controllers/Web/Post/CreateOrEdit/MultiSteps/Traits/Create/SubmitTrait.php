@@ -257,7 +257,6 @@ tqVEwiuxLvnJKk+iv7zS9aF2i4j//k9/gO+CfGdmWodkV/yLaEWQcf9pSHaY1CI=
 								$paymentMessage = data_get($paymentData, 'message');
 								if (data_get($paymentData, 'extra.payment.success')) {
 									$paymentMessage  = $paymentMessage .' ' .$msgToDisplay;
-									dd($paymentMessage);
 									flash($paymentMessage)->success();
 									
 									if (data_get($paymentData, 'extra.nextUrl')) {
