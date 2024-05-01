@@ -96,16 +96,6 @@
 								</h2>
 							</div>
 						@else
-							<div class="col-12 m-0 p-0 d-flex justify-content-end">
-								<h2 class="item-price">
-									@if (data_get($post, 'securityDeposit') == 1)
-										<small class="label bg-primary" style="font-size: 12px;">Security Deposit Optional</small>
-									@else 
-										<small class="label bg-danger" style="font-size: 12px;">Security Deposit Not Required</small>
-									@endif
-								</h2>
-							</div>
-						@endif
 						<div class="col-12 m-0 p-0 d-flex justify-content-end">
 							<h2 class="item-price">
 								@if (data_get($post, 'securityDeposit') == 1)

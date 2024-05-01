@@ -10,7 +10,7 @@
 							@if (config('settings.footer.powered_by_info'))
 								{{ t('Powered by') }} {!! config('settings.footer.powered_by_info') !!}
 							@else
-								{{ t('Powered by') }} <a href="https://laraclassifier.com" title="LaraClassifier">LaraClassifier</a>.
+								{{ t('Powered by') }} <a href="https://kirayepey.com" title="KirayePey">KirayePey</a>.
 							@endif
 						@endif
 					</div>
