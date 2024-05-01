@@ -92,6 +92,14 @@
 								@endif
 							</h2>
 						@else
+							<h2 class="item-price">
+								@if (data_get($post, 'securityDeposit') == 1)
+									<small class="label bg-primary" style="font-size: 12px;">Security Deposit Optional</small>
+								@else 
+									<small class="label bg-danger" style="font-size: 12px;">Security Deposit Not Required</small>
+								@endif
+							</h2>
+						@endif
 						@if (!empty(data_get($post, 'latestPayment.package')))
 							@if (data_get($post, 'latestPayment.package.has_badge') == 1)
 								<a class="btn btn-danger btn-sm make-favorite">
