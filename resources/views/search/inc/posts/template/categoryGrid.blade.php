@@ -4,7 +4,7 @@
 @endphp
 @if (!empty($posts) && $totalPosts > 0)
 	@foreach($posts as $key => $post)
-	@if(data_get($post, 'latestPayment.package_id') != 3 && data_get($post, 'latestPayment.package_id') != 2) 
+	@if(data_get($post, 'latestPayment.package_id') != 3) 
 		<div class="item-list">
 			@if (data_get($post, 'featured') == 1)
 				@if (!empty(data_get($post, 'latestPayment.package')))
