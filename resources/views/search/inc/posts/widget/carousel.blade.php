@@ -36,7 +36,7 @@
 						<div class="no-margin featured-list-slider {{ $carouselEl }} owl-carousel owl-theme">
 							@foreach($posts as $key => $post)
 								
-								@if(data_get($post, 'latestPayment.package_id') == 2) 
+								@if(data_get($post, 'latestPayment.package_id') == 3) 
 									<div class="item">
 										<a href="{{ \App\Helpers\UrlGen::post($post) }}">
 											<span class="item-carousel-thumb">
