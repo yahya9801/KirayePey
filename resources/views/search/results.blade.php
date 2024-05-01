@@ -178,20 +178,7 @@
 									$currDisplay = config('settings.list.display_mode');
 								@endphp
 								<div class="float-end col-md-3 col-sm-4 col-12 text-end listing-view-action">
-									@if (isset($displayModes) && !empty($displayModes))
-										@foreach($displayModes as $displayMode => $value)
-											<span class="grid-view{{ ($currDisplay == $displayMode) ? ' active' : '' }}">
-												@if ($currDisplay == $displayMode)
-													<i class="{{ data_get($value, 'icon') }}"></i>
-												@else
-													@php
-														$displayModeUrl = request()->fullUrlWithQuery((array)data_get($value, 'query'));
-													@endphp
-													<a href="{!! $displayModeUrl !!}"><i class="{{ data_get($value, 'icon') }}"></i></a>
-												@endif
-											</span>
-										@endforeach
-									@endif
+									
 								</div>
 							@endif
 							
