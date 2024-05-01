@@ -1,6 +1,7 @@
 @php
 	$posts ??= [];
 	$totalPosts ??= 0;
+	dd($posts);
 @endphp
 @if (!empty($posts) && $totalPosts > 0)
 	@foreach($posts as $key => $post)
