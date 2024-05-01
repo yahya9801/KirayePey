@@ -123,7 +123,6 @@ trait SectionDataTrait
 			$postsResult = $postsCollection->toResponse(request())->getData();
 			
 			request()->replace($savedQueries);
-			
 			$sponsored = [
 				'title'      => t('Home - Sponsored Listings'),
 				'link'       => UrlGen::searchWithoutQuery(),
