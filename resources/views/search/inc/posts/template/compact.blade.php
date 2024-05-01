@@ -77,6 +77,15 @@
 						<h2 class="item-price">
 							{!! data_get($post, 'price_formatted'). data_get($post, 'pricing') !!}
 						</h2>
+						@if (data_get($post, 'securityDepositAmount') > 0)
+							<h2 class="item-price">
+								@if (data_get($post, 'securityDeposit') == 1)
+									<small class="label bg-success" style="font-size: 12px;"> Security Deposit Required</small>
+								@else
+									<small class="label bg-primary" style="font-size: 12px;">Security Deposit Optional</small>
+								@endif
+							</h2>
+						@else
 						@if (!empty(data_get($post, 'latestPayment.package')))
 							@if (data_get($post, 'latestPayment.package.has_badge') == 1)
 								<a class="btn btn-danger btn-sm make-favorite">
