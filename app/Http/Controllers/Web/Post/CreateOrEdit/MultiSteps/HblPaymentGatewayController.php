@@ -114,7 +114,7 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
         $url="https://digitalbankingportal.hbl.com/hostedcheckout/api/checkout";
 //debug(callAPI("POST",$url,$cyb->encrypt_RSA($stringData)));
         $jsonCyberSourceResult=json_decode($this->callAPI("POST",$url,$arrJson),true);
-        dd($jsonCyberSourceResult, $request->session()->get('REFERENCE_NUMBER'));
+       // dd($jsonCyberSourceResult, $request->session()->get('REFERENCE_NUMBER'));
         if($jsonCyberSourceResult["IsSuccess"] && $jsonCyberSourceResult["ResponseMessage"]=="Success" && $jsonCyberSourceResult["ResponseCode"]==0){
             $sessionId=base64_encode($jsonCyberSourceResult["Data"]["SESSION_ID"]);
             $nextUrl = "https://digitalbankingportal.hbl.com/hostedcheckout/site/index.html#/checkout?data=$sessionId";
