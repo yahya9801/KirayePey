@@ -145,7 +145,7 @@ A0M2SW/GvSDG4g3R0K3TPHkCAwEAAQ==
         // dd($request->session());
         $data = [
             "USER_ID" => "kirayepayadmin",
-            "PASSWORD" => "'5u4RYpa#Xj",
+            "PASSWORD" => "5u4RYpa#Xj",
             "CLIENT_NAME" => "Kirayepay",
             "RETURN_URL" => "https://test.kirayepey.com/posts/submit/payment",
             "CANCEL_URL" => "https://test.kirayepey.com/posts/submit/payment",
