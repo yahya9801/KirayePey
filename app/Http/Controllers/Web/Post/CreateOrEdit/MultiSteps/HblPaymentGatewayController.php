@@ -115,14 +115,20 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
         $url="https://digitalbankingportal.hbl.com/hostedcheckout/api/checkout";
 //debug(callAPI("POST",$url,$cyb->encrypt_RSA($stringData)));
         $jsonCyberSourceResult=json_decode($this->callAPI("POST",$url,$arrJson),true);
-       dd($arrJson);
-        if($jsonCyberSourceResult["IsSuccess"] && $jsonCyberSourceResult["ResponseMessage"]=="Success" && $jsonCyberSourceResult["ResponseCode"]==0){
+       // dd($jsonCyberSourceResult, $request->session()->get('REFERENCE_NUMBER'));
+        if(isset($jsonCyberSourceResult["IsSuccess"]) && $jsonCyberSourceResult["IsSuccess"] && $jsonCyberSourceResult["ResponseMessage"]=="Success" && $jsonCyberSourceResult["ResponseCode"]==0){
             $sessionId=base64_encode($jsonCyberSourceResult["Data"]["SESSION_ID"]);
             $nextUrl = "https://digitalbankingportal.hbl.com/hostedcheckout/site/index.html#/checkout?data=$sessionId";
             return redirect($nextUrl);
         }
         else {
-            flash($jsonCyberSourceResult["RESPONSE_MESSAGE"])->error();
+            if(isset($jsonCyberSourceResult["RESPONSE_MESSAGE"]) && $jsonCyberSourceResult["RESPONSE_MESSAGE"]){
+                $message = $jsonCyberSourceResult["RESPONSE_MESSAGE"];
+            }
+            else {
+                $message = 'Sorry the payment cannot be processed currently. Please try again later';
+            }
+            flash($message)->error();
 			
 			return redirect()->back();
         }
