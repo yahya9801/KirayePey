@@ -165,12 +165,12 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
             "TYPE_ID" => "0",
             "ORDER" => [
                 "DISCOUNT_ON_TOTAL" => "0",
-                "SUBTOTAL" => $package->price,
+                "SUBTOTAL" => -1,
                 "OrderSummaryDescription" => [
                     [
                         "ITEM_NAME" => $package->name,
                         "QUANTITY" => "1",
-                        "UNIT_PRICE" => $package->price,
+                        "UNIT_PRICE" => -1,
                         "OLD_PRICE" => "0",
                         "CATEGORY" => "Test Category",
                         "SUB_CATEGORY" => "Test Sub Category"
