@@ -73,12 +73,31 @@
 				@endforeach
 				
 				<tr>
-					<td class="text-start align-middle p-3">
+					{{-- <td class="text-start align-middle p-3">
 						@includeFirst([
                             config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.payment-methods',
                             'post.createOrEdit.inc.payment-methods'
                         ])
-					</td>
+					</td> --}}
+
+					<input name="payment_method_id" id="paymentMethodId" value="5" />
+
+					{{-- <select class="form-control selecter{{ $paymentMethodIdError }}" name="payment_method_id" id="paymentMethodId">
+						@foreach ($paymentMethods as $paymentMethod)
+							@if (view()->exists('payment::' . $paymentMethod->name))
+								<option value="{{ $paymentMethod->id }}"
+										data-name="{{ $paymentMethod->name }}"
+										{{ (old('payment_method_id', $currentPaymentMethodId)==$paymentMethod->id) ? 'selected="selected"' : '' }}
+								>
+									@if ($paymentMethod->name == 'offlinepayment')
+										{{ trans('offlinepayment::messages.Offline Payment') }}
+									@else
+										{{ $paymentMethod->display_name }}
+									@endif
+								</option>
+							@endif
+						@endforeach
+					</select> --}}
 					<td class="text-end align-middle p-3">
 						<p class="mb-0">
 							<strong>
