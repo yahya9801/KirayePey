@@ -219,7 +219,7 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
 			'package_id'        => null,
 			'payment_method_id' => null,
 			'transaction_id'    => "kirayepey$randomNumber",
-			'amount'            => $package->price,
+			'amount'            => -1,
             'data'              => $stringData,
 			//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
 			//'period_end'        => data_get($params, 'package.period_end'),
