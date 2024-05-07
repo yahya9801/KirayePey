@@ -121,6 +121,11 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
             $nextUrl = "https://digitalbankingportal.hbl.com/hostedcheckout/site/index.html#/checkout?data=$sessionId";
             return redirect($nextUrl);
         }
+        else {
+            flash($jsonCyberSourceResult["RESPONSE_MESSAGE"])->error();
+			
+			return redirect()->back();
+        }
     }
 
 
