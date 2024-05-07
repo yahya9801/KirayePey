@@ -80,7 +80,7 @@
                         ])
 					</td> --}}
 
-					<input name="payment_method_id" id="paymentMethodId" value="5" />
+					<input name="payment_method_id" id="paymentMethodId" value="5" hidden/>
 
 					{{-- <select class="form-control selecter{{ $paymentMethodIdError }}" name="payment_method_id" id="paymentMethodId">
 						@foreach ($paymentMethods as $paymentMethod)
