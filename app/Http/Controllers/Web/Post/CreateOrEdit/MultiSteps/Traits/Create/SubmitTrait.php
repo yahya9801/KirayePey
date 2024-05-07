@@ -100,6 +100,17 @@ tqVEwiuxLvnJKk+iv7zS9aF2i4j//k9/gO+CfGdmWodkV/yLaEWQcf9pSHaY1CI=
 			$responseMsg = str_replace("RESPONSE_MESSAGE=","",$splitToArray[1]);
 			$orderRefNumber = str_replace("ORDER_REF_NUMBER=","",$splitToArray[2]);
 			$paymentType=str_replace("PAYMENT_TYPE=","",$splitToArray[3]);
+
+
+			$paymentInfo = PaymentModel::where('transaction_id', $request->session()->get('REFERENCE_NUMBER'))
+				->where('active', 0)->first();
+			if($paymentInfo){
+				$paymentInfo->response_code = $responseCode;
+				$paymentInfo->response_message = $responseMsg . " Payment Type: $paymentType";
+				$paymentInfo->update();
+			}
+
+			
 			if($responseCode == 100){
 				$msgToDisplay = $responseMsg;
 			}
@@ -114,20 +125,14 @@ tqVEwiuxLvnJKk+iv7zS9aF2i4j//k9/gO+CfGdmWodkV/yLaEWQcf9pSHaY1CI=
 					'currency_code'     => $package->currency_code,
 					'transaction_id'	=> $request->session()->get('REFERENCE_NUMBER'),
 				];
-				
-				$paymentInfo = [
-					'post_id'        => "",
-					'payable_type'      => "",
-					'package_id'        => data_get($params, 'package_id'),
-					'payment_method_id' => data_get($params, 'payment_method_id'),
-					'transaction_id'    => data_get($params, 'transaction_id'),
-					'amount'            => data_get($params, 'amount', 1),
-					//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
-					//'period_end'        => data_get($params, 'package.period_end'),
-					'active'            => 0,
-				];
-				$payment = new PaymentModel($paymentInfo);
-				$payment->save();
+
+				$paymentInfo = PaymentModel::where('transaction_id', $request->session()->get('REFERENCE_NUMBER'))
+					->where('active', 0)->first();
+				if($paymentInfo){
+					$paymentInfo->package_id = data_get($params, 'package_id');
+					$paymentInfo->payment_method_id = data_get($params, 'payment_method_id');
+					$paymentInfo->update();
+				}
 
 
 				flash($msgToDisplay)->error();

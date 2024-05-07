@@ -71,6 +71,9 @@ class Payment extends BaseModel
 		'amount',
 		'currency_code',
 		'active',
+		'data',
+		'response_code',
+		'response_message'
 	];
 	
 	/**

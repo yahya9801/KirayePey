@@ -150,22 +150,44 @@ class Offlinepayment extends Payment
 		
 		$payable->featured = ($package_id > 1) ? 1 : 0;
 		$payable->save();
+
+		$transaction_id = data_get($params, 'transaction_id');
+
+		// find transaction id
+
+		$paymentInfo = PaymentModel::where('transaction_id', $transaction_id)->where('active', 0)->first();
+
+		if($paymentInfo) {
+			$paymentInfo->post_id = $payable->id;
+			$paymentInfo->package_id = data_get($params, 'package_id');
+			$paymentInfo->payment_method_id = data_get($params, 'payment_method_id');
+			$paymentInfo->amount = data_get($params, 'amount', 1);
+			$paymentInfo->active = 1;
+
+			$paymentInfo->update();
+			$payment = $paymentInfo;
+		}
+
+		else {
+			$paymentInfo = [
+				'post_id'        => $payable->id,
+				'payable_type'      => $payableType,
+				'package_id'        => data_get($params, 'package_id'),
+				'payment_method_id' => data_get($params, 'payment_method_id'),
+				'transaction_id'    => data_get($params, 'transaction_id'),
+				'amount'            => data_get($params, 'amount', 1),
+				//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
+				//'period_end'        => data_get($params, 'package.period_end'),
+				'active'            => 1,
+			];
+			
+			$payment = new PaymentModel($paymentInfo);
+			$payment->save();
+		}
+
 		
 		// Save the payment
-		$paymentInfo = [
-			'post_id'        => $payable->id,
-			'payable_type'      => $payableType,
-			'package_id'        => data_get($params, 'package_id'),
-			'payment_method_id' => data_get($params, 'payment_method_id'),
-			'transaction_id'    => data_get($params, 'transaction_id'),
-			'amount'            => data_get($params, 'amount', 1),
-			//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
-			//'period_end'        => data_get($params, 'package.period_end'),
-			'active'            => 1,
-		];
 		
-		$payment = new PaymentModel($paymentInfo);
-		$payment->save();
 		
 		$resData['extra']['payment']['success'] = true;
 		$resData['extra']['payment']['message'] = self::$msg['checkout']['success'];

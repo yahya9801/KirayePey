@@ -29,6 +29,7 @@ use App\Models\City;
 use App\Models\Package;
 use App\Models\SubAdmin1;
 use App\Models\User;
+use App\Models\Payment as PaymentModel;
 
 class HblPaymentGatewayController 
 {
@@ -199,6 +200,23 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
         $stringData = json_encode($data);
         // dd($stringData);
         $request->session()->put('REFERENCE_NUMBER', "kirayepey$randomNumber");
+
+        // save REFERENCE_NUMBER 
+
+        $paymentInfo = [
+			'post_id'        => null,
+			'package_id'        => null,
+			'payment_method_id' => null,
+			'transaction_id'    => "kirayepey$randomNumber",
+			'amount'            => $package->price,
+            'data'              => $stringData,
+			//'period_start'      => data_get($params, 'package.period_start', now()->startOfDay()),
+			//'period_end'        => data_get($params, 'package.period_end'),
+			'active'            => 0,
+		];
+		
+		$payment = new PaymentModel($paymentInfo);
+		$payment->save();
         return $stringData;
     }
 
