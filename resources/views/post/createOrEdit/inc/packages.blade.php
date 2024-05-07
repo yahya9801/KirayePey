@@ -73,12 +73,12 @@
 				@endforeach
 				
 				<tr>
-					{{-- <td class="text-start align-middle p-3">
-						@includeFirst([
+					<td class="text-start align-middle p-3">
+						{{-- @includeFirst([
                             config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.payment-methods',
                             'post.createOrEdit.inc.payment-methods'
-                        ])
-					</td> --}}
+                        ]) --}}
+					</td>
 
 					<input name="payment_method_id" id="paymentMethodId" value="5" hidden/>
 
