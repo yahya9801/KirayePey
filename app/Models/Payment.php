@@ -99,10 +99,10 @@ class Payment extends BaseModel
 	{
 		parent::boot();
 		
-		Payment::observe(PaymentObserver::class);
+		// Payment::observe(PaymentObserver::class);
 		
-		static::addGlobalScope(new StrictActiveScope());
-		static::addGlobalScope(new LocalizedScope());
+		// static::addGlobalScope(new StrictActiveScope());
+		// static::addGlobalScope(new LocalizedScope());
 	}
 	
 	public function getPostTitleHtml(): string
