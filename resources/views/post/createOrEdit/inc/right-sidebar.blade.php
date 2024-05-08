@@ -71,6 +71,11 @@
 					<li> {{ t('sell_quickly_advice_3') }}</li>
 					<li> {{ t('sell_quickly_advice_4') }}</li>
 					<li> {{ t('sell_quickly_advice_5') }}</li>
+					<li> {{ t('sell_quickly_advice_6') }}</li>
+					<li> {{ t('sell_quickly_advice_7') }}</li>
+					<li> {{ t('sell_quickly_advice_8') }}</li>
+					<li> {{ t('sell_quickly_advice_9') }}</li>
+					<li> {{ t('sell_quickly_advice_10') }}</li>
 				</ul>
 			</div>
 		</div>

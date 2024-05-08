@@ -219,11 +219,17 @@ return [
     'cities' => 'Cities',
     
     'how_to_sell_quickly' => 'How to sell quickly?',
-    'sell_quickly_advice_1' => 'Use a brief title and description of the item',
-    'sell_quickly_advice_2' => 'Make sure you post in the correct category',
-    'sell_quickly_advice_3' => 'Add nice photos to your listing',
-    'sell_quickly_advice_4' => 'Put a reasonable price',
-    'sell_quickly_advice_5' => 'Check the item before publish',
+    'sell_quickly_advice_1' => 'Do receive a copy or original copy of CNIC.',
+    'sell_quickly_advice_2' => 'In case of no CNIC, take someone else’s CNIC or License copy.',
+    'sell_quickly_advice_3' => 'Do receive any important verification document to be on the safe side.',
+    'sell_quickly_advice_4' => 'Call CPLC and get details of the person/business before renting out.',
+    'sell_quickly_advice_5' => 'Try to take their latest pictures with their consent.',
+    'sell_quickly_advice_6' => 'For your safety, get an agreement signed and/or stamped.',
+    'sell_quickly_advice_7' => 'Do not share original ownership documents with the party.',
+    'sell_quickly_advice_8' => 'Keep copies of all correspondence (emails, letter, whatsapp chats etc).',
+    'sell_quickly_advice_9' => 'Doing business with the people you can meet in person.',
+    'sell_quickly_advice_10' => 'Never send money or products abroad.',
+
     
     
     'my_listings' => 'My listings',
