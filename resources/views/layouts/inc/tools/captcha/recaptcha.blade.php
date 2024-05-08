@@ -21,7 +21,7 @@
 			</div>
 			
 		@else
-		@dd($errors)
+			
 			<?php $recaptchaError = (isset($errors) && $errors->has('g-recaptcha-response')) ? ' is-invalid' : ''; ?>
 			@if (isset($colLeft) && isset($colRight))
 				<div class="row mb-3 required{{ $recaptchaError }}">
