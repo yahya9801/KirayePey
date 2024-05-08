@@ -22,7 +22,6 @@
 	
 	$postTypes ??= [];
 	$countries ??= [];
-	dd('wizard');
 @endphp
 
 @section('content')
