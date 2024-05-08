@@ -150,12 +150,12 @@
 									<a class="make-favorite" id="{{ data_get($post, 'id') }}" href="javascript:void(0)">
 										@if (auth()->check())
 											@if (!empty(data_get($post, 'savedByLoggedUser')))
-												<i class="fas fa-bookmark" data-bs-toggle="tooltip" title="{{ t('Remove favorite') }}"></i>
+												<i class="fas fa-heart" data-bs-toggle="tooltip" title="{{ t('Remove favorite') }}"></i>
 											@else
-												<i class="far fa-bookmark" data-bs-toggle="tooltip" title="{{ t('Save listing') }}"></i>
+												<i class="far fa-heart" data-bs-toggle="tooltip" title="{{ t('Save listing') }}"></i>
 											@endif
 										@else
-											<i class="far fa-bookmark" data-bs-toggle="tooltip" title="{{ t('Save listing') }}"></i>
+											<i class="far fa-heart" data-bs-toggle="tooltip" title="{{ t('Save listing') }}"></i>
 										@endif
 									</a>
 								</div>

@@ -29,7 +29,7 @@
 			'title' => t('archived_listings'),
 		],
 		'favourite' => [
-			'icon'  => 'fas fa-bookmark',
+			'icon'  => 'fas fa-heart',
 			'title' => t('favourite_listings'),
 		],
 		'pending-approval' => [

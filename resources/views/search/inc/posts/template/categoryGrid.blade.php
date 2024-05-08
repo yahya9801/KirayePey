@@ -117,11 +117,11 @@
 							@endif
 							@if (!empty(data_get($post, 'savedByLoggedUser')))
 								<a class="btn btn-success btn-sm make-favorite" id="{{ data_get($post, 'id') }}">
-									<i class="fas fa-bookmark"></i> <span>{{ t('Saved') }}</span>
+									<i class="fas fa-heart"></i> <span>{{ t('Saved') }}</span>
 								</a>
 							@else
 								<a class="btn btn-default btn-sm make-favorite" id="{{ data_get($post, 'id') }}">
-									<i class="fas fa-bookmark"></i> <span>{{ t('Save') }}</span>
+									<i class="fas fa-heart"></i> <span>{{ t('Save') }}</span>
 								</a>
 							@endif
 						</div>

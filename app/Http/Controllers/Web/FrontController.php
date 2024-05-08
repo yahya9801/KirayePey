@@ -157,7 +157,7 @@ class FrontController extends Controller
 			[
 				'name'       => t('favourite_listings'),
 				'url'        => url('account/posts/favourite'),
-				'icon'       => 'fas fa-bookmark',
+				'icon'       => 'fas fa-heart',
 				'group'      => t('my_listings'),
 				'countVar'   => 'posts.favourite',
 				'inDropdown' => true,
