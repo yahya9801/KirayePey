@@ -172,13 +172,20 @@
 	@endif
 	
 	<div class="card sidebar-card">
-		<div class="card-header">{{ t('Safety Tips for Buyers') }}</div>
+		<div class="card-header">{{ Anti Scam }}</div>
 		<div class="card-content">
 			<div class="card-body text-start">
 				<ul class="list-check">
-					<li>{{ t('Meet seller at a public place') }}</li>
-					<li>{{ t('Check the item before you buy') }}</li>
-					<li>{{ t('Pay only after collecting the item') }}</li>
+					<li> {{ t('sell_quickly_advice_1') }} </li>
+					<li> {{ t('sell_quickly_advice_2') }}</li>
+					<li> {{ t('sell_quickly_advice_3') }}</li>
+					<li> {{ t('sell_quickly_advice_4') }}</li>
+					<li> {{ t('sell_quickly_advice_5') }}</li>
+					<li> {{ t('sell_quickly_advice_6') }}</li>
+					<li> {{ t('sell_quickly_advice_7') }}</li>
+					<li> {{ t('sell_quickly_advice_8') }}</li>
+					<li> {{ t('sell_quickly_advice_9') }}</li>
+					<li> {{ t('sell_quickly_advice_10') }}</li>
 				</ul>
 				@php
 					$tipsLinkAttributes = getUrlPageByType('tips');
