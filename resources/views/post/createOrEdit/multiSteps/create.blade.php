@@ -531,6 +531,12 @@
 												<button id="nextStepBtn" class="btn btn-primary btn-lg">{{ t('Next') }}</button>
 											</div>
 										</div>
+										<div class="row">
+											<div class="col-md-12">
+												To report a problem: customer@kirayepey.com
+											</div>
+										</div>
+
 										
 									</fieldset>
 								</form>
