@@ -6,7 +6,7 @@
 	@if (config('recaptcha.version') == 'v2')
 		{{-- recaptcha --}}
 		@if (isAdminPanel())
-			
+			@dd($errors)
 			<?php $recaptchaError = (isset($errors) && $errors->has('g-recaptcha-response')) ? ' is-invalid' : ''; ?>
 			<div class="form-group mb-3 required{{ $recaptchaError }}">
 				<div class="no-label">

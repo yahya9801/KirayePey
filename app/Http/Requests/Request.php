@@ -291,7 +291,6 @@ abstract class Request extends FormRequest
 		if (config('settings.security.captcha') == 'recaptcha') {
 			// reCAPTCHA
 			if (config('recaptcha.site_key') && config('recaptcha.secret_key')) {
-				dd($rules);
 				if (!isFromApi()) {
 					$rules['g-recaptcha-response'] = ['recaptcha'];
 				}
