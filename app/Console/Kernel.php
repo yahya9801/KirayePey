@@ -58,7 +58,7 @@ class Kernel extends ConsoleKernel
 		$schedule->command('auth:clear-resets')->everyFifteenMinutes();
 		
 		// Clear Listings
-		$schedule->command('listings:purge')->hourly();
+		$schedule->command('listings:purge');
 		
 		// Backups
 		setBackupConfig();
