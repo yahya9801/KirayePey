@@ -172,7 +172,7 @@
 	@endif
 	
 	<div class="card sidebar-card">
-		<div class="card-header"> Anti Scam </div>
+		<div class="card-header"> Anti Scam Recommendations </div>
 		<div class="card-content">
 			<div class="card-body text-start">
 				<ul class="list-check">
