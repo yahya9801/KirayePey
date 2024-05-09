@@ -56,6 +56,10 @@
 												'post.createOrEdit.inc.packages'
 											])
                                         @endif
+
+										<div class="row">
+											More packages coming soon...
+										</div>
 										
                                         <div class="row">
                                             <div class="col-md-12 text-center mt-4">
