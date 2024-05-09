@@ -101,7 +101,6 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
 		}
 		$package_id = $request->package_id;
         $payment_method_id = $request->payment_method_id;
-        dd($request);
 
 		$request->session()->put('paymentInput', array(
             'package_id' => $package_id,
