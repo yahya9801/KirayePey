@@ -57,7 +57,7 @@
 											])
                                         @endif
 
-										<div class="row" style="padding*left:1em;">
+										<div class="row" style="padding-left:1em;">
 											More packages coming soon...
 										</div>
 										
