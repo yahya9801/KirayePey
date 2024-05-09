@@ -108,6 +108,9 @@
 							</strong>
 						</p>
 					</td>
+					
+				</tr>
+				<tr>
 					<td class="text-start align-middle p-3">
 						More packages coming soon
 						{{-- @includeFirst([
