@@ -47,7 +47,7 @@ $maxSubCats = (int)data_get($sectionOptions, 'max_sub_cats');
 				
 				@if (!empty($categories))
 					@foreach($categories as $key => $cat)
-						<div class="col-md-2 col-sm-4 col-6 f-category" style="display: inline-block; margin-right: 10px;">
+						<div class="col-md-2 col-sm-4 col-6 f-category">
 							<a href="{{ \App\Helpers\UrlGen::category($cat) }}">
 								@if (in_array(config('settings.list.show_category_icon'), [2, 6, 7, 8]))
 									<i class="{{ data_get($cat, 'icon_class') ?? 'fas fa-folder' }}"></i>

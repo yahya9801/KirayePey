@@ -108,6 +108,13 @@
 							</strong>
 						</p>
 					</td>
+					<td class="text-start align-middle p-3">
+						More packages coming soon
+						{{-- @includeFirst([
+                            config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.payment-methods',
+                            'post.createOrEdit.inc.payment-methods'
+                        ]) --}}
+					</td>
 				</tr>
 			    @includeFirst([
         config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.payment-methods.plugins',

@@ -61,7 +61,7 @@
 	
 	<div class="card sidebar-card border-color-primary">
 		<div class="card-header bg-primary border-color-primary text-white uppercase">
-			<strong>Anti Scam</strong>
+			<strong>Anti Scam Recommendations</strong>
 		</div>
 		<div class="card-content">
 			<div class="card-body text-start">
