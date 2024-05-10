@@ -136,6 +136,7 @@
 					}
 					else if(packagePrice == 0) {
 						$("#postForm").attr("action", "/posts/create/payment");
+						$('#postForm').submit();
 					}
 					
 					return false;
