@@ -159,8 +159,8 @@ WzlDWCxR3+U7bMicr/eeaB0CAwEAAQ==
             "USER_ID" => "kirayepayadmin",
             "PASSWORD" => "5u4RYpa#Xj",
             "CLIENT_NAME" => "Kirayepay",
-            "RETURN_URL" => "https://test.kirayepey.com/posts/submit/payment",
-            "CANCEL_URL" => "https://test.kirayepey.com/posts/submit/payment",
+            "RETURN_URL" => "https://kirayepey.com/posts/submit/payment",
+            "CANCEL_URL" => "https://kirayepey.com/posts/submit/payment",
             "CHANNEL" => "HBLPay_kirayepay_website",
             "TYPE_ID" => "0",
             "ORDER" => [
