@@ -311,7 +311,7 @@ Route::namespace('App\Http\Controllers\Web')
 						Route::post('posts/create/photos/reorder', 'reorderPictures');
 						Route::get('posts/create/payment', 'getPaymentStep');
 						Route::post('posts/create/payment', 'postPaymentStep');
-						Route::get('posts/submit/payment', 'postPaymentStep');
+						Route::get('posts/submit/payment', 'postPaymentStep2');
 						Route::post('posts/create/finish', 'finish');
 						Route::get('posts/create/finish', 'finish');
 						
