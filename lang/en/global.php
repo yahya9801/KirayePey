@@ -229,6 +229,7 @@ return [
     'sell_quickly_advice_8' => 'Keep copies of all correspondence (emails, letter, whatsapp chats etc).',
     'sell_quickly_advice_9' => 'Doing business with the people you can meet in person.',
     'sell_quickly_advice_10' => 'Never send money or products abroad.',
+    'sell_quickly_advice_11' => 'Safety is in your hands, KirayePey is not responsible for any theft.',
 
     
     
