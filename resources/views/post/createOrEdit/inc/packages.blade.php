@@ -54,7 +54,7 @@
 											data-bs-placement="right"
 											data-bs-toggle="tooltip"
 											title="{!! $package->description_string !!}"
-									>{!! $package->name . $badge . " | $package->description_string "!!} </strong>
+									>{!! $package->name . $badge . " | $package->description "!!} </strong>
 								</label>
 							</div>
 						</td>
