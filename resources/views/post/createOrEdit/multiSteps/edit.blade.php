@@ -178,6 +178,7 @@
 													<option @selected(old('pricing', data_get($post, 'pricing')) == '/day') value="/day">Per day(/day) </option>
 													<option @selected(old('pricing', data_get($post, 'pricing')) == '/month') value="/month">Per month(/month) </option>
 												</select>
+												<div class="form-text text-muted">Choose between per hour, per day etc</div>
 											</div>
 										</div>
 										@php
