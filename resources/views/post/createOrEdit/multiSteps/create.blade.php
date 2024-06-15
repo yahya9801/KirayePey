@@ -167,6 +167,7 @@
 													<option value="/day">Per day(/day) </option>
 													<option value="/month">Per month(/month) </option>
 												</select>
+												Choose between per hour, per day etc
 											</div>
 										</div>
 										@php
