@@ -25,8 +25,8 @@ $hideOnMobile = (data_get($sectionOptions, 'hide_on_mobile') == '1') ? ' hidden-
 @if (!empty($textTitle) || !empty($textBody))
 	@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'], ['hideOnMobile' => $hideOnMobile])
 	<div class="container{{ $hideOnMobile }}">
-		<div class="card">
-			<div class="card-body">
+		<div class="card" style="padding: 0 !important;">
+			<div class="card-body" style="padding: 0 !important;">
 				@if (!empty($textTitle))
 					<h2 class="card-title">{{ $textTitle }}</h2>
 				@endif
