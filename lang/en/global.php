@@ -727,7 +727,7 @@ return [
 	'Tags' => 'Tags',
 	'Tag' => 'Tag',
 	
-	'tags_hint' => 'Enter the tags separated by commas or press the Enter (↵) button on your keyboard after each tag. The number of tags cannot exceed :limit. And each tag can only be :min to :max characters long.',
+	'tags_hint' => 'Enter the tags separated by commas or press the Enter (↵) button on your keyboard after each tag. The number of tags cannot exceed :limit. And each tag can only be :min to :max characters long. This will help you in marketing the product',
 	'add a tag' => 'add a tag',
 	'Click to see' => 'Click to see',
 	'Payment pending' => 'Payment pending',
