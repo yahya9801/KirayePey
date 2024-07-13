@@ -44,6 +44,9 @@
 KirayePey was founded in 2023, with a plan to help the lenders with advertisement of rental products and/or services. There was no proper platform for such cause so KirayePey came into being.
 										</p>
 
+										<p>You can now rent your property (house, flat, guest house, hostel, shop, office space, farmhouse, hut etc), cars, bikes, trucks, clothes, wedding halls, games, gaming equipment, tools, machinery, electronics, hotel rooms, educational material etc by advertising on our platform</p>
+
+
 										<h4><b>Mission Statement</b></h4>
 <p>Our mission is to help the lenders with their advertisements.</p>
 
